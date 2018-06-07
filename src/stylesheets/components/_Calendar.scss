@@ -1,0 +1,168 @@
+@import "ReactDayPicker";
+
+.calendar {
+  h1 {
+    background-image: url("/pctrs/h1_calendar.png");
+    top: 2%;
+  }
+  .content {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .left, .right {
+    height: 430px;
+  }
+  .left {
+    float: left;
+    width: 370px;
+  }
+  .right {
+    float: right;
+    width: calc(100% - 370px);
+  }
+  .DayPicker, .DayPicker-Month {
+    width: 100%;
+    font-family: 'PT Sans';
+    font-size: 22px;
+  }
+  .DayPicker-Caption {
+    text-transform: uppercase;
+    font-size: 26px;
+    margin-bottom: 1rem;
+    div {
+      font-size: 26px;
+    }
+  }
+  .DayPicker-Weekdays {
+    border-top: solid 1px #c9c9c9;
+    border-bottom: solid 1px #c9c9c9;
+    text-transform: uppercase;
+    font-size: 26px;
+  }
+  .DayPicker-Weekday {
+    padding: 15px 0.5rem;
+    &:last-child, &:nth-last-child(2) {
+      color: #8c5555;
+    }
+  }
+  .DayPicker-WeekdaysRow {
+  }
+  .DayPicker-Day {
+    font-size: 26px;
+  }
+  .DayPicker-Day--selected, .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+    border: none;
+    border-radius: 0;
+    background: linear-gradient(to bottom right, #ffffff 0%, #c00404 25%, #c00404 100%);
+  }
+  .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+    border-radius: 0;
+    background-color: #7b7b7b;
+  }
+  .Events {
+    width: 100%;
+    font-family: 'PT Sans';
+    padding-left: 45px;
+  }
+  .Events-row {
+    display: table;
+    table-layout:fixed;
+    width: 100%;
+    padding-bottom: 5px;
+    &:hover {
+      .Events-spacer {
+        &:after {
+          left: 0;
+          border-left-color: #c00404;
+        }
+      }
+      .Events-info, .Events-button {
+        background-color: #ffffff;
+      }
+    }
+    &.Events-Orthos {
+      .Events-date {
+        background-color: #7b7b7b;
+      }
+      &:hover {
+        .Events-spacer {
+          &:after {
+            left: 0;
+            border-left-color: #7b7b7b;
+          }
+        }
+      }
+    }
+  }
+
+  .Events-date {
+    display: table-cell;
+    width: 100px;
+    height: 95px;
+    background-color: #c00404;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 26px;
+  }
+  .Events-spacer {
+    display: table-cell;
+    position: relative;
+    width: 25px;
+    height: 95px;
+    &:after {
+      position: absolute;
+      content: '';
+      border: 23px solid transparent;
+      left: -48px;
+      top: 50%;
+      margin-top: -24px;
+      @include my-transition(all, .2s, ease-out);
+      transform: scaleY(0.5);
+    }
+  }
+  .Events-info {
+    position: relative;
+    display: table-cell;
+    padding: 8px;
+    //width: calc(100% - 125px);
+    height: 95px;
+    background-color: #dddddd;
+    color: #000;
+    text-align: left;
+    overflow: hidden;
+    a {
+      color: #000;
+    }
+    .Events-info-title {
+      font-family: "PT Sans";
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-stretch: extra-condensed;
+      line-height: 1;
+    }
+    .Events-info-lid {
+      margin-top: 5px;
+      line-height: 0.95;
+    }
+    .Events-info-content {
+      max-height: 75px;
+      overflow: hidden;
+    }
+  }
+  .Events-button {
+    display: table-cell;
+    width: 190px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #dddddd;;
+    button {
+      width: 160px;
+      height: 40px;
+      background-color: #c00404;
+      font-family: "PT Sans";
+      font-size: 22px;
+      color: #fff;
+    }
+  }
+}

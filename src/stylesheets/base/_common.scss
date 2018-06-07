@@ -1,0 +1,58 @@
+$body-color: rgb(255, 255, 255);
+$red-color: rgb(192,4, 4);
+
+body {
+  color: $body-color;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background: url('/pctrs/background.jpg') no-repeat center center / cover fixed;
+}
+.App {
+  & > div {
+    text-align: center;
+  }
+}
+header, section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;
+  .content {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Roboto', sans-serif;
+  }
+  h1 {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 15px;
+    min-width: 500px;
+    min-height: 70px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: transparent;
+    &:after {
+      content: '';
+      display: block;
+      width: 208px;
+      border-bottom: solid 5px #fff;
+      margin: 65px auto 0 auto;
+    }
+  }
+}
+section {
+  max-width: 1500px;
+  margin: 0 auto;
+  text-align: left;
+}
+.align-center {
+  text-align: center !important;
+}

@@ -1,0 +1,181 @@
+.ReactModal {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  bottom: 40px;
+  margin-left: -570px;
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 1140px;
+  padding: 25px;
+  outline: none;
+  overflow: auto;
+}
+
+.ReactModal-Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.ReactModal__Body--open {
+  //overflow: hidden;
+  //position: fixed;
+  //width: 100%;
+  //height: 100%;
+}
+
+.ModalContent {
+  position: relative;
+  color: #000;
+  .slick-track {
+    transition: transform 600ms ease;
+  }
+}
+.ModalContent-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  transform: scale3d(1.2, 1, 1);
+  background: transparent;
+}
+.ModalContent-header {
+  width: 100%;
+  background-color: #e9e9e9;
+  padding: 25px 35px;
+  font: 700 30px/1.1 'PT Sans Narrow';
+  text-transform: uppercase;
+  display: table;
+  .left {
+    display: table-cell;
+    width: 70%;
+    vertical-align: middle;
+  }
+  .right {
+    display: table-cell;
+    width: 30%;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .date {
+    font-size: 48px;
+    color: #be0503;
+  }
+  button {
+    border: none;
+    min-width: 160px;
+    padding: 12px 25px;
+    font: 500 20px 'PT Sans';
+    color: #fff;
+    background-color: #be0503;
+    outline: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+.ModalContent-info {
+  padding: 25px 0;
+  .main-image {
+    float: right;
+    margin: 0 0 15px 15px;
+  }
+  .item-row {
+    margin-bottom: 15px;
+    label {
+      display: inline-block;
+      margin-right: 10px;
+      font: 700 30px 'PT Sans Narrow';
+      text-transform: uppercase;
+      &.wrapit {
+        display: block;
+      }
+    }
+  }
+}
+.ModalContent-form {
+  text-align: center;
+  font: 400 18px/1.1 'PT Sans Narrow';
+  .form-row {
+    width: 405px;
+    margin: 0 auto 15px auto;
+    text-align: left;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input[type=text], input[type=email] {
+    width: 100%;
+    padding: 18px 15px;
+    color: #777777;
+    background-color: #e9e9e9;
+    border: solid 1px #dadada;
+    font: 400 18px 'Roboto';
+  }
+  .check-box {
+    overflow: auto;
+    input[type=checkbox] {
+      float: left;
+    }
+    label {
+      display: inline-block;
+      float: left;
+      width: 80%;
+      margin-left: 10px;
+    }
+  }
+  button.submit {
+    display: inline-block;
+    border: none;
+    min-width: 160px;
+    padding: 12px 25px;
+    margin: 0 auto;
+    font: 500 20px 'PT Sans';
+    color: #fff;
+    background-color: #be0503;
+    outline: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    &:disabled {
+      background-color: #dadada;
+    }
+  }
+  .has-error {
+    border: solid 1px rgba(255, 0, 0, 0.2) !important;
+  }
+  .formWrapper {
+    position: relative;
+    padding: 25px;
+    &.alerted {
+      .overlay {
+        display: block;
+      }
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      display: none;
+    }
+    .loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 200px;
+      height: 200px;
+      margin: -100px 0 0 -100px;
+      color: #ffffff;
+      z-index: 1;
+      font-size: 20px;
+    }
+  }
+}
