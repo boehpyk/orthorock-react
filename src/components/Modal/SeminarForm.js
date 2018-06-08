@@ -46,8 +46,6 @@ class SeminarForm extends Component {
         const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
         const name = event.target.name;
 
-        // console.log(name, value);
-
         this.setState({
                 [name]: value
             },
@@ -147,16 +145,19 @@ class SeminarForm extends Component {
     }
 
     handleResponse = data => {
-        console.log(data);
+        this.setState({
+            sending: false,
+            response: data
+        });
     }
 
     showFormFields = () => {
 
         const loader = (this.state.sending === true) ? <Loader text="Sending..." /> : null;
-        const alert = (this.state.response.status !== '') ? <Alert data={ this.state.response } /> : null;
+        const alert = (this.state.response.status !== '') ? <Alert data={ this.state.response } hideAlert={this.hideAlert } /> : null;
 
         return  (
-            <div className={`formWrapper${(this.state.sending === true) ? ' alerted' : ''}`}>
+            <div className={`formWrapper${(this.state.sending === true || this.state.response.status !== '') ? ' alerted' : ''}`}>
                 { loader }
                 { alert }
                 <form formMethod="POST">
@@ -191,6 +192,16 @@ class SeminarForm extends Component {
                 <div className="overlay"></div>
             </div>
         )
+    }
+
+    hideAlert = () => {
+        this.setState({
+            response: {
+                status: '',
+                message: '',
+                payload: {}
+            },
+        });
     }
 
 

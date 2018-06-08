@@ -166,16 +166,54 @@
       background-color: rgba(0, 0, 0, 0.3);
       display: none;
     }
-    .loader {
+    .loader, .alert {
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 200px;
-      height: 200px;
-      margin: -100px 0 0 -100px;
+      width: 100px;
+      height: 100px;
+      margin: -50px 0 0 -50px;
       color: #ffffff;
       z-index: 1;
-      font-size: 20px;
+      font-size: 32px;
+    }
+    .alert {
+      font-size: 16px;
+      min-width: 350px;
+      //height: 150px;
+      height: auto;
+      margin: -100px 0 0 -165px;
+      font-family: 'Roboto';
+      .alert-wrapper {
+        position: relative;
+      }
+      .alert-close {
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        border: none;
+        background: none;
+        font: 700 20px 'PT Sans';
+        transform: scale(1, 0.8);
+        color: #662222;
+      }
+      h4 {
+        margin: 0 0 10px 0;
+        font-weight: bold;
+      }
+      .msg, .err {
+        text-align: left;
+      }
+      .err {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.4;
+        list-style: circle;
+        padding-left: 15px;
+        strong {
+          font-weight: 700;
+        }
+      }
     }
   }
 }

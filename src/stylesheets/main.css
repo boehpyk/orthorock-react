@@ -135,6 +135,43 @@ section {
 .align-center {
   text-align: center !important; }
 
+/* Helpers */
+/* alerts */
+.alert {
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 6px; }
+  .alert h4 {
+    margin-top: 0;
+    color: inherit;
+    font-size: 120%; }
+  .alert .alert-link {
+    font-weight: 300; }
+  .alert > p {
+    margin-bottom: 0; }
+  .alert > ul {
+    margin-bottom: 0; }
+
+.alert-success {
+  background-color: #dff0d8;
+  border: solid 1px #3b6533;
+  color: #3c763d !important; }
+
+.alert-info {
+  background-color: #31708f;
+  border: solid 1px #c4ebf3;
+  color: #d9edf7; }
+
+.alert-warning {
+  background-color: #fcf8e3;
+  border: solid 1px #faebcc;
+  color: #8a6d3b; }
+
+.alert-danger {
+  background-color: #f2dede;
+  border: solid 1px #ebccd1;
+  color: #a94442 !important; }
+
 .section-about h1 {
   background-image: url("/pctrs/h1_about.png"); }
 
@@ -731,13 +768,43 @@ header {
       height: 100%;
       background-color: rgba(0, 0, 0, 0.3);
       display: none; }
-    .ModalContent-form .formWrapper .loader {
+    .ModalContent-form .formWrapper .loader, .ModalContent-form .formWrapper .alert {
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 200px;
-      height: 200px;
-      margin: -100px 0 0 -100px;
+      width: 100px;
+      height: 100px;
+      margin: -50px 0 0 -50px;
       color: #ffffff;
       z-index: 1;
-      font-size: 20px; }
+      font-size: 32px; }
+    .ModalContent-form .formWrapper .alert {
+      font-size: 16px;
+      min-width: 350px;
+      height: auto;
+      margin: -100px 0 0 -165px;
+      font-family: 'Roboto'; }
+      .ModalContent-form .formWrapper .alert .alert-wrapper {
+        position: relative; }
+      .ModalContent-form .formWrapper .alert .alert-close {
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        border: none;
+        background: none;
+        font: 700 20px 'PT Sans';
+        transform: scale(1, 0.8);
+        color: #662222; }
+      .ModalContent-form .formWrapper .alert h4 {
+        margin: 0 0 10px 0;
+        font-weight: bold; }
+      .ModalContent-form .formWrapper .alert .msg, .ModalContent-form .formWrapper .alert .err {
+        text-align: left; }
+      .ModalContent-form .formWrapper .alert .err {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.4;
+        list-style: circle;
+        padding-left: 15px; }
+        .ModalContent-form .formWrapper .alert .err strong {
+          font-weight: 700; }
