@@ -125,12 +125,15 @@ class SeminarForm extends Component {
         this.handleResponse(res);
     }
 
-    sendData = (data) => {
-        const res = {};
+    sendData = async (data) => {
 
         return fetch(this.enrollURL, {
             method: "POST",
-            // headers: headers,
+            mode: 'cors',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
             body:  JSON.stringify(data)
         })
         .then(function(response){
@@ -153,8 +156,8 @@ class SeminarForm extends Component {
 
     showFormFields = () => {
 
-        const loader = (this.state.sending === true) ? <Loader text="Sending..." /> : null;
-        const alert = (this.state.response.status !== '') ? <Alert data={ this.state.response } hideAlert={this.hideAlert } /> : null;
+        const loader = (this.state.sending === true) ? <Loader text="Sending" /> : null;
+        const alert = (this.state.response.status !== '') ? <Alert data={ this.state.response } hideAlert={ this.hideAlert } /> : null;
 
         return  (
             <div className={`formWrapper${(this.state.sending === true || this.state.response.status !== '') ? ' alerted' : ''}`}>

@@ -1,4 +1,5 @@
 import {LOAD_MONTH_EVENTS} from '../constants/months';
+import {GLOBAL_URL} from '../constants/config';
 
 export function loadMonthEvents(month) {
     return (dispatch, getState) => {
@@ -8,7 +9,7 @@ export function loadMonthEvents(month) {
         dispatch({
             type: LOAD_MONTH_EVENTS,
             payload: { month },
-            callAPI: `http://orthorock.work/api/events/${y}/${m}/`
+            callAPI: `${GLOBAL_URL}/api/events/${y}/${m}/`
         })
     }
 }

@@ -1,4 +1,5 @@
 import { LOAD_EVENT } from '../constants/events';
+import {GLOBAL_URL} from '../constants/config';
 
 export function loadEventIntoModal(eventId) {
 
@@ -11,7 +12,7 @@ export function loadEventIntoModal(eventId) {
         dispatch({
             type: LOAD_EVENT,
             payload: { eventId },
-            callAPI: `http://orthorock.work/api/events/event/${eventId}/`
+            callAPI: `${GLOBAL_URL}/api/events/event/${eventId}/`
         })
     }
 }

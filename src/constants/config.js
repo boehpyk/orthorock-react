@@ -1,1 +1,1 @@
-export const GLOBAL_URL = 'http://orthorock.work';
+export const GLOBAL_URL = 'https://orthorock.work';

@@ -8,7 +8,9 @@ export default store => next => action => {
         ...rest
     })
 
-    fetch(callAPI)
+    fetch(callAPI, {
+        method: "GET"
+    })
         .then(res => res.json())
         .then(response => next({...rest, type: type + SUCCESS, response}))
         .catch(error => next({...rest, type: type + FAIL, error}));

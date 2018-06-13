@@ -12,7 +12,7 @@ class Alert extends Component {
 
     const status = resp.status;
     const message = resp.message;
-    const errors = (resp.errors.length > 0) ? resp.errors : null;
+    const errors = (undefined !== resp.errors && resp.errors.length > 0) ? resp.errors : null;
 
     return (
         <div className={`alert${(status !== 'ok') ? ' alert-danger' : ' alert-success'}`}>
@@ -20,12 +20,20 @@ class Alert extends Component {
             <button onClick={ this.props.hideAlert } className="alert-close">x</button>
             <h4>{ message.title }</h4>
             <div className="msg">{ message.text }</div>
-            <ul className="err">{(
-                errors.map(item => ReactHtmlParser(`<li>${item}</li>`))
-            )}</ul>
+              { this.showErrors(errors) }
           </div>
         </div>
     );
+  }
+
+  showErrors = (errors) => {
+      if (null !== errors) {
+          return (
+            <ul className="err">{(
+                errors.map(item => ReactHtmlParser(`<li>${item}</li>`))
+            )}</ul>
+          )
+      }
   }
 }
 
