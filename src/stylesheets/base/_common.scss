@@ -100,3 +100,13 @@ section {
   border: solid 1px #ebccd1;
   color: #a94442 !important;
 }
+.alert-success-button {
+  margin: 10px auto 5px auto;
+  border: none;
+  padding: 6px 12px;
+  font: 500 14px 'PT Sans';
+  color: #fff;
+  background-color: #be0503;
+  outline: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

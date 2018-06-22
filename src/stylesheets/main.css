@@ -172,13 +172,44 @@ section {
   border: solid 1px #ebccd1;
   color: #a94442 !important; }
 
+.alert-success-button {
+  margin: 10px auto 5px auto;
+  border: none;
+  padding: 6px 12px;
+  font: 500 14px 'PT Sans';
+  color: #fff;
+  background-color: #be0503;
+  outline: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+
 .section-about h1 {
   background-image: url("/pctrs/h1_about.png"); }
+
+.section-about .content {
+  width: 100%;
+  padding: 0 15px;
+  max-width: 1140px;
+  margin: 0 auto; }
 
 .section-about ul {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  font-size: 20px; }
+  .section-about ul li {
+    display: block;
+    width: 50%;
+    padding: 0 120px 40px 80px;
+    float: left;
+    min-height: 90px; }
+    .section-about ul li:nth-child(1) {
+      background: url("/pctrs/li_1.png") left top no-repeat; }
+    .section-about ul li:nth-child(2) {
+      background: url("/pctrs/li_2.png") left top no-repeat; }
+    .section-about ul li:nth-child(3) {
+      background: url("/pctrs/li_3.png") left top no-repeat; }
+    .section-about ul li:nth-child(4) {
+      background: url("/pctrs/li_4.png") left top no-repeat; }
 
 /* DayPicker styles */
 .DayPicker {
@@ -491,8 +522,61 @@ section {
     font-size: 22px;
     color: #fff; }
 
-.contacts h1 {
-  background-image: url("/pctrs/h1_contacts.png"); }
+.contacts {
+  background-image: url("/pctrs/contacts_bgr.png");
+  background-repeat: no-repeat;
+  background-position: right 4% bottom 6%;
+  background-size: 42% auto; }
+  .contacts h1 {
+    background-image: url("/pctrs/h1_contacts.png"); }
+  .contacts .content {
+    width: 100%;
+    padding: 0 30px; }
+  .contacts .left, .contacts .right {
+    float: left;
+    font-family: "PT Sans Narrow"; }
+  .contacts .left {
+    width: 45%;
+    font-size: 24px;
+    line-height: 1.2;
+    padding-top: 40px; }
+    .contacts .left .head {
+      font-size: 28px;
+      font-weight: 700; }
+  .contacts .right {
+    display: table;
+    width: 55%;
+    background: url("/pctrs/contacts_email_bgr.png") left top no-repeat;
+    padding: 40px 0 90px 130px; }
+  .contacts .form-email, .contacts .form-submit {
+    display: table-cell;
+    vertical-align: middle;
+    min-height: 50px; }
+  .contacts .form-email {
+    width: 65%;
+    padding-right: 15px; }
+    .contacts .form-email input {
+      width: 90%;
+      background: none;
+      border: none;
+      border-bottom: solid 1px #fff;
+      padding: 10px 10px 10px 15px;
+      font-family: Roboto;
+      font-size: 20px;
+      color: #fff; }
+  .contacts .form-submit {
+    width: 35%;
+    text-align: center; }
+    .contacts .form-submit button {
+      border: none;
+      padding: 10px 25px;
+      font: 500 22px 'PT Sans Narrow';
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #be0503;
+      outline: none; }
+      .contacts .form-submit button:disabled {
+        background-color: #dadada; }
 
 header {
   text-align: center;
@@ -511,6 +595,75 @@ header {
 .photo h1 {
   background-image: url("/pctrs/h1_photo.png"); }
 
+.photo .content {
+  position: relative;
+  width: 80%;
+  margin: 0 auto; }
+
+.photo .seminar-item {
+  position: relative;
+  overflow: hidden;
+  min-height: 275px;
+  margin: 0 5px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  text-align: left;
+  font-family: "PT Sans Narrow";
+  color: #fff; }
+  .photo .seminar-item .info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 130px;
+    transform: translateY(66px);
+    transition: transform 0.5s ease;
+    z-index: 1; }
+  .photo .seminar-item .date-title {
+    font-size: 20px;
+    line-height: 0.9;
+    height: 65px;
+    overflow: hidden;
+    padding: 5px 20px; }
+  .photo .seminar-item button {
+    border: none;
+    background-color: #c00404;
+    width: 100%;
+    height: 65px;
+    overflow: hidden;
+    padding: 20px;
+    text-decoration: underline;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: "PT Sans Narrow";
+    color: #fff;
+    cursor: pointer; }
+  .photo .seminar-item .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    transition: opacity 0.5s ease; }
+  .photo .seminar-item:hover .info {
+    transform: translateY(0); }
+  .photo .seminar-item:hover .overlay {
+    opacity: 0; }
+
+.photo .slick-slider {
+  height: 275px; }
+
+.photo .find-yourself {
+  position: absolute;
+  right: -40px;
+  bottom: -140px; }
+
 .seminars h1 {
   background-image: url("/pctrs/h1_seminars.png"); }
 
@@ -526,7 +679,7 @@ header {
   padding: 20px 15px;
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: cover;
   text-align: left; }
   .seminars .seminar-item .date {
     position: absolute;
@@ -636,10 +789,10 @@ header {
   top: 40px;
   left: 50%;
   bottom: 40px;
-  margin-left: -570px;
+  margin-left: -450px;
   background-color: #ffffff;
   width: 90%;
-  max-width: 1140px;
+  max-width: 900px;
   padding: 25px;
   outline: none;
   overflow: auto; }
@@ -654,7 +807,8 @@ header {
 
 .ModalContent {
   position: relative;
-  color: #000; }
+  color: #000;
+  height: 100%; }
   .ModalContent .slick-track {
     transition: transform 600ms ease; }
 
@@ -667,6 +821,26 @@ header {
   font-weight: bold;
   transform: scale3d(1.2, 1, 1);
   background: transparent; }
+
+.ModalContent-wrapper {
+  position: relative; }
+
+.ModalContent-content {
+  position: relative;
+  height: 500px;
+  overflow-y: auto; }
+  .ModalContent-content .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 200px;
+    margin: -100px 0 0 -150px;
+    color: #000000;
+    z-index: 1;
+    font-family: 'PT Sans Narrow';
+    font-size: 34px;
+    text-align: center; }
 
 .ModalContent-header {
   width: 100%;
@@ -685,6 +859,8 @@ header {
     text-align: center;
     vertical-align: middle; }
   .ModalContent-header .date {
+    display: inline-block;
+    margin-right: 10px;
     font-size: 48px;
     color: #be0503; }
   .ModalContent-header button {
@@ -808,3 +984,39 @@ header {
         padding-left: 15px; }
         .ModalContent-form .formWrapper .alert .err strong {
           font-weight: 700; }
+
+.ModalSubscribe-content {
+  position: absolute;
+  width: 80%;
+  padding: 50px 15px;
+  left: 10%;
+  top: 50%;
+  transform: translate(0, -125px); }
+  .ModalSubscribe-content .loader {
+    font-family: 'PT Sans Narrow';
+    font-size: 34px;
+    text-align: center; }
+  .ModalSubscribe-content .alert-wrapper {
+    position: relative; }
+  .ModalSubscribe-content .alert-close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    border: none;
+    background: none;
+    font: 700 20px 'PT Sans';
+    transform: scale(1, 0.8);
+    color: #662222; }
+  .ModalSubscribe-content h4 {
+    margin: 0 0 10px 0;
+    font-weight: bold; }
+  .ModalSubscribe-content .msg, .ModalSubscribe-content .err {
+    text-align: left; }
+  .ModalSubscribe-content .err {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    list-style: circle;
+    padding-left: 15px; }
+    .ModalSubscribe-content .err strong {
+      font-weight: 700; }

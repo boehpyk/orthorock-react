@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import {connect} from 'react-redux';
+import { hideModal } from '../../AC/modals';
 
 class Alert extends Component {
 
@@ -20,7 +22,8 @@ class Alert extends Component {
             <button onClick={ this.props.hideAlert } className="alert-close">x</button>
             <h4>{ message.title }</h4>
             <div className="msg">{ message.text }</div>
-              { this.showErrors(errors) }
+            { this.showErrors(errors) }
+            { this.showModalCloseButton(status) }
           </div>
         </div>
     );
@@ -35,6 +38,18 @@ class Alert extends Component {
           )
       }
   }
+
+    showModalCloseButton = (status) => {
+        if (status === 'ok') {
+            return <button onClick={ this.closeModal } className="alert-success-button">Закрыть окно</button>
+        }
+    }
+
+    closeModal = () => {
+        this.props.hideModal();
+    }
+
 }
 
-export default Alert;
+// export default Alert;
+export default connect(null, { hideModal })(Alert)

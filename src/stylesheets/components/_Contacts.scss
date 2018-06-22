@@ -1,5 +1,68 @@
 .contacts {
+  background-image: url("/pctrs/contacts_bgr.png");
+  background-repeat: no-repeat;
+  background-position: right 4% bottom 6%;
+  background-size: 42% auto;
   h1 {
     background-image: url("/pctrs/h1_contacts.png");
+  }
+  .content {
+    width: 100%;
+    padding: 0 30px;
+  }
+  .left, .right {
+    float: left;
+    font-family: "PT Sans Narrow";
+  }
+  .left {
+    width: 45%;
+    font-size: 24px;
+    line-height: 1.2;
+    padding-top: 40px;
+    .head {
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+  .right {
+    display: table;
+    width: 55%;
+    background: url('/pctrs/contacts_email_bgr.png') left top no-repeat;
+    padding: 40px 0 90px 130px;
+  }
+  .form-email, .form-submit {
+    display: table-cell;
+    vertical-align: middle;
+    min-height: 50px;
+  }
+  .form-email {
+    width: 65%;
+    padding-right: 15px;
+    input {
+      width: 90%;
+      background: none;
+      border: none;
+      border-bottom: solid 1px #fff;
+      padding: 10px 10px 10px 15px;
+      font-family: Roboto;
+      font-size: 20px;
+      color: #fff;
+    }
+  }
+  .form-submit {
+    width: 35%;
+    text-align: center;
+    button {
+      border: none;
+      padding: 10px 25px;
+      font: 500 22px 'PT Sans Narrow';
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #be0503;
+      outline: none;
+      &:disabled {
+        background-color: #dadada;
+      }
+    }
   }
 }

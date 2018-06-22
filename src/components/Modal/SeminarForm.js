@@ -128,7 +128,7 @@ class SeminarForm extends Component {
     sendData = async (data) => {
 
         return fetch(this.enrollURL, {
-            method: "POST",
+            method: 'POST',
             mode: 'cors',
             headers: {
                 'Accept': 'application/json',

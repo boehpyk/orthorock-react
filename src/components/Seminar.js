@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import moment from 'moment'
+import {connect} from 'react-redux';
+import {openModal} from '../AC/modals';
+import moment from 'moment';
+import {GLOBAL_URL} from '../constants/config';
+import {SHOW_EVENT} from '../constants/modals'
 
 class Seminar extends Component {
     render() {
@@ -7,7 +11,7 @@ class Seminar extends Component {
         const datebegin = moment(article.datebegin)
         const dateend = moment(article.dateend)
         const style = {
-            background: `url(/uplds/${article.image})`,
+            backgroundImage: `url(${GLOBAL_URL}/uplds/${article.id}/sm_${article.image})`,
         }
 
         return (
@@ -17,20 +21,37 @@ class Seminar extends Component {
                 <div className="white-line"></div>
                 <div className="more">
                     <div className="more-content">
-                        <p>ГДЕ: { article.place }</p>
+                        <p>ГДЕ: { article.city }</p>
                         <p>КОГДА: { datebegin.format('HH:mm') } - {dateend.format('HH:mm')}</p>
-                        <p>СТОИМОСТЬ: { article.price }</p>
-                        <p>ОПИСАНИЕ: <span className="description">{ article.description }</span></p>
+                        { this.getPrice(article.price) }
+                        <p>ОПИСАНИЕ: <span className="description">{ article.lid }</span></p>
                     </div>
                 </div>
                 <div className="button-wrapper">
-                    <button>Записаться</button>
+                    <button onClick={ this.showModal } value={ article.id }>Подробнее</button>
                 </div>
             </div>
         )
     }
+
+    getPrice = (price) => {
+        if (parseInt(price, 10) > 0) {
+            return (
+                <p>СТОИМОСТЬ: {price}</p>
+            );
+        }
+    }
+
+    showModal = (e) => {
+        this.props.openModal({
+            id: e.currentTarget.value,
+            type: SHOW_EVENT
+        });
+    }
+
 }
 
 
 
-export default Seminar
+// export default Seminar
+export default connect(null, { openModal })(Seminar);

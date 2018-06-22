@@ -1,10 +1,36 @@
+@mixin bkg($i) {
+  &:nth-child(#{$i}) {
+    background: url("/pctrs/li_#{$i}.png") left top no-repeat;
+  }
+}
+
+
 .section-about {
   h1 {
     background-image: url("/pctrs/h1_about.png");
+  }
+  .content {
+    width: 100%;
+    padding: 0 15px;
+    max-width: 1140px;
+    margin: 0 auto;
   }
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
+    font-size: 20px;
+    li {
+      display: block;
+      width: 50%;
+      padding: 0 120px 40px 80px;
+      float: left;
+      min-height: 90px;
+      @include bkg(1);
+      @include bkg(2);
+      @include bkg(3);
+      @include bkg(4);
+    }
   }
 }
+

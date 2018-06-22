@@ -30,7 +30,7 @@ class ShowEventModal extends Component {
     render() {
 
         return (
-            <div className="ModalContent-content">{ this.showEvent() }</div>
+            <div>{ this.showEvent() }</div>
         );
     }
 

@@ -6,7 +6,7 @@ import {loadMonthEvents} from '../AC/months';
 import {openModal} from '../AC/modals';
 import Slider from 'react-slick'
 import moment from 'moment';
-import {SHOW_EVENT, SHOW_GALLERY} from '../constants/modals'
+import {SHOW_EVENT} from '../constants/modals'
 
 const WEEKDAYS_SHORT = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
 const MONTHS = [
