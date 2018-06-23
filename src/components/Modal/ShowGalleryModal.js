@@ -39,7 +39,7 @@ class ShowGalleryModal extends Component {
         if (fetching || event === undefined) {
             return (
                 <div className="ModalContent-content">
-                    <Loader text="Загрузка" />
+                    <Loader text="Загрузка фото" />
                 </div>
             );
         }

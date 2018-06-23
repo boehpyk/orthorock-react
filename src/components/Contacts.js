@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {GLOBAL_URL} from '../constants/config';
-import {openModal, hideModal} from '../AC/modals'
-import {SHOW_SUBSCRIBE} from '../constants/modals'
+import {openModal} from '../AC/modals'
+import {SHOW_SUBSCRIBE, SHOW_CONFIRM} from '../constants/modals'
 import {connect} from 'react-redux';
+import queryString from 'query-string'
 
 class Contacts extends Component {
 
@@ -16,6 +17,20 @@ class Contacts extends Component {
     }
 
     enrollURL = `${GLOBAL_URL}/api/subscribe/`;
+    confirmData = {};
+
+    componentWillMount() {
+        this.confirmData = queryString.parse(window.location.search);
+
+        this.confirmEmail = this.confirmData.email || null;
+        this.confirmCode = this.confirmData.confirm || null;
+    }
+
+    componentDidMount() {
+        if (this.confirmCode && this.confirmEmail) {
+            this.handleConfirm();
+        }
+    }
 
   render() {
     return (
@@ -79,6 +94,18 @@ class Contacts extends Component {
             type: SHOW_SUBSCRIBE
         });
     }
+
+    handleConfirm = async (event) => {
+        const data = {
+            email:      this.confirmEmail,
+            code:      this.confirmCode,
+        };
+        this.props.openModal({
+            data: data,
+            type: SHOW_CONFIRM
+        });
+    }
+
 
     showFormFields = () => {
 

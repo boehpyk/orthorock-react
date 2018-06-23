@@ -12,13 +12,15 @@ import Contacts from './Contacts';
 import ShowEventModal from './Modal/ShowEventModal';
 import ShowGalleryModal from './Modal/ShowGalleryModal';
 import ShowSubscribeModal from './Modal/ShowSubscribeModal'
+import ShowConfirmModal from './Modal/ShowConfirmModal';
 import { hideModal } from '../AC/modals';
 
 
 const MODAL_COMPONENTS = {
     'SHOW_EVENT': ShowEventModal,
     'SHOW_GALLERY': ShowGalleryModal,
-    'SHOW_SUBSCRIBE': ShowSubscribeModal
+    'SHOW_SUBSCRIBE': ShowSubscribeModal,
+    'SHOW_CONFIRM': ShowConfirmModal
     /* other modals */
 }
 
