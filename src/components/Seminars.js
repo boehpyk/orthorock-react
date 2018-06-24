@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import {connect} from 'react-redux';
 import {loadFutureEvents} from '../AC/months';
 import {futureEventsSelector} from '../selectors';
+import Loader from './Utils/Loader';
 
 
 class Seminars extends Component {
@@ -28,7 +29,7 @@ class Seminars extends Component {
       const fetching  = this.props.fetching_future;
 
       if (fetching) {
-          return 'Loading...';
+          return <Loader text="Загрузка" />;
       }
       else {
 

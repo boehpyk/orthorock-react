@@ -1,6 +1,20 @@
 @import "ReactDayPicker";
 
 .calendar {
+  position: relative;
+  .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 200px;
+    margin: -100px 0 0 -150px;
+    color: #000000;
+    z-index: 1;
+    font-family: 'PT Sans Narrow';
+    font-size: 34px;
+    text-align: center;
+  }
   h1 {
     background-image: url("/pctrs/h1_calendar.png");
     top: 2%;
@@ -10,7 +24,11 @@
     padding: 0 15px;
   }
   .left, .right {
+    position: relative;
     height: 430px;
+    .loader {
+      color: #fff;
+    }
   }
   .left {
     float: left;

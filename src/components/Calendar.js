@@ -6,7 +6,8 @@ import {loadMonthEvents} from '../AC/months';
 import {openModal} from '../AC/modals';
 import Slider from 'react-slick'
 import moment from 'moment';
-import {SHOW_EVENT} from '../constants/modals'
+import {SHOW_EVENT} from '../constants/modals';
+import Loader from './Utils/Loader';
 
 const WEEKDAYS_SHORT = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
 const MONTHS = [
@@ -89,7 +90,7 @@ class Calendar extends Component {
         const fetching  = this.props.months.fetching;
 
         if (fetching) {
-            return 'Loading...';
+            return <Loader text="Загрузка календаря" />;
         }
         else {
             const monthevents = this.props.months[this.state.currentMonth];
@@ -118,7 +119,7 @@ class Calendar extends Component {
         const monthevents = this.props.months[this.state.currentMonth];
 
         if (fetching) {
-            return 'Loading...';
+            return <Loader text="Загрузка событий" />;
         }
         else {
             const events = monthevents.entities || [];

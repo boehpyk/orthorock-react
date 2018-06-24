@@ -380,147 +380,147 @@ section {
   background: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); }
 
-.calendar h1 {
-  background-image: url("/pctrs/h1_calendar.png");
-  top: 2%; }
-
-.calendar .content {
-  width: 100%;
-  padding: 0 15px; }
-
-.calendar .left, .calendar .right {
-  height: 430px; }
-
-.calendar .left {
-  float: left;
-  width: 370px; }
-
-.calendar .right {
-  float: right;
-  width: calc(100% - 370px); }
-
-.calendar .DayPicker, .calendar .DayPicker-Month {
-  width: 100%;
-  font-family: 'PT Sans';
-  font-size: 22px; }
-
-.calendar .DayPicker-Caption {
-  text-transform: uppercase;
-  font-size: 26px;
-  margin-bottom: 1rem; }
-  .calendar .DayPicker-Caption div {
-    font-size: 26px; }
-
-.calendar .DayPicker-Weekdays {
-  border-top: solid 1px #c9c9c9;
-  border-bottom: solid 1px #c9c9c9;
-  text-transform: uppercase;
-  font-size: 26px; }
-
-.calendar .DayPicker-Weekday {
-  padding: 15px 0.5rem; }
-  .calendar .DayPicker-Weekday:last-child, .calendar .DayPicker-Weekday:nth-last-child(2) {
-    color: #8c5555; }
-
-.calendar .DayPicker-Day {
-  font-size: 26px; }
-
-.calendar .DayPicker-Day--selected, .calendar .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
-  border: none;
-  border-radius: 0;
-  background: linear-gradient(to bottom right, #ffffff 0%, #c00404 25%, #c00404 100%); }
-
-.calendar .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
-  border-radius: 0;
-  background-color: #7b7b7b; }
-
-.calendar .Events {
-  width: 100%;
-  font-family: 'PT Sans';
-  padding-left: 45px; }
-
-.calendar .Events-row {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  padding-bottom: 5px; }
-  .calendar .Events-row:hover .Events-spacer:after {
-    left: 0;
-    border-left-color: #c00404; }
-  .calendar .Events-row:hover .Events-info, .calendar .Events-row:hover .Events-button {
-    background-color: #ffffff; }
-  .calendar .Events-row.Events-Orthos .Events-date {
-    background-color: #7b7b7b; }
-  .calendar .Events-row.Events-Orthos:hover .Events-spacer:after {
-    left: 0;
-    border-left-color: #7b7b7b; }
-
-.calendar .Events-date {
-  display: table-cell;
-  width: 100px;
-  height: 95px;
-  background-color: #c00404;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 26px; }
-
-.calendar .Events-spacer {
-  display: table-cell;
-  position: relative;
-  width: 25px;
-  height: 95px; }
-  .calendar .Events-spacer:after {
+.calendar {
+  position: relative; }
+  .calendar .loader {
     position: absolute;
-    content: '';
-    border: 23px solid transparent;
-    left: -48px;
+    left: 50%;
     top: 50%;
-    margin-top: -24px;
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-    transform: scaleY(0.5); }
-
-.calendar .Events-info {
-  position: relative;
-  display: table-cell;
-  padding: 8px;
-  height: 95px;
-  background-color: #dddddd;
-  color: #000;
-  text-align: left;
-  overflow: hidden; }
-  .calendar .Events-info a {
-    color: #000; }
-  .calendar .Events-info .Events-info-title {
-    font-family: "PT Sans";
-    font-size: 20px;
+    width: 300px;
+    height: 200px;
+    margin: -100px 0 0 -150px;
+    color: #000000;
+    z-index: 1;
+    font-family: 'PT Sans Narrow';
+    font-size: 34px;
+    text-align: center; }
+  .calendar h1 {
+    background-image: url("/pctrs/h1_calendar.png");
+    top: 2%; }
+  .calendar .content {
+    width: 100%;
+    padding: 0 15px; }
+  .calendar .left, .calendar .right {
+    position: relative;
+    height: 430px; }
+    .calendar .left .loader, .calendar .right .loader {
+      color: #fff; }
+  .calendar .left {
+    float: left;
+    width: 370px; }
+  .calendar .right {
+    float: right;
+    width: calc(100% - 370px); }
+  .calendar .DayPicker, .calendar .DayPicker-Month {
+    width: 100%;
+    font-family: 'PT Sans';
+    font-size: 22px; }
+  .calendar .DayPicker-Caption {
     text-transform: uppercase;
-    font-weight: 600;
-    font-stretch: extra-condensed;
-    line-height: 1; }
-  .calendar .Events-info .Events-info-lid {
-    margin-top: 5px;
-    line-height: 0.95; }
-  .calendar .Events-info .Events-info-content {
-    max-height: 75px;
-    overflow: hidden; }
-
-.calendar .Events-button {
-  display: table-cell;
-  width: 190px;
-  text-align: center;
-  vertical-align: middle;
-  background-color: #dddddd; }
-  .calendar .Events-button button {
-    width: 160px;
-    height: 40px;
+    font-size: 26px;
+    margin-bottom: 1rem; }
+    .calendar .DayPicker-Caption div {
+      font-size: 26px; }
+  .calendar .DayPicker-Weekdays {
+    border-top: solid 1px #c9c9c9;
+    border-bottom: solid 1px #c9c9c9;
+    text-transform: uppercase;
+    font-size: 26px; }
+  .calendar .DayPicker-Weekday {
+    padding: 15px 0.5rem; }
+    .calendar .DayPicker-Weekday:last-child, .calendar .DayPicker-Weekday:nth-last-child(2) {
+      color: #8c5555; }
+  .calendar .DayPicker-Day {
+    font-size: 26px; }
+  .calendar .DayPicker-Day--selected, .calendar .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+    border: none;
+    border-radius: 0;
+    background: linear-gradient(to bottom right, #ffffff 0%, #c00404 25%, #c00404 100%); }
+  .calendar .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+    border-radius: 0;
+    background-color: #7b7b7b; }
+  .calendar .Events {
+    width: 100%;
+    font-family: 'PT Sans';
+    padding-left: 45px; }
+  .calendar .Events-row {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding-bottom: 5px; }
+    .calendar .Events-row:hover .Events-spacer:after {
+      left: 0;
+      border-left-color: #c00404; }
+    .calendar .Events-row:hover .Events-info, .calendar .Events-row:hover .Events-button {
+      background-color: #ffffff; }
+    .calendar .Events-row.Events-Orthos .Events-date {
+      background-color: #7b7b7b; }
+    .calendar .Events-row.Events-Orthos:hover .Events-spacer:after {
+      left: 0;
+      border-left-color: #7b7b7b; }
+  .calendar .Events-date {
+    display: table-cell;
+    width: 100px;
+    height: 95px;
     background-color: #c00404;
-    font-family: "PT Sans";
-    font-size: 22px;
-    color: #fff; }
+    vertical-align: middle;
+    text-align: center;
+    font-size: 26px; }
+  .calendar .Events-spacer {
+    display: table-cell;
+    position: relative;
+    width: 25px;
+    height: 95px; }
+    .calendar .Events-spacer:after {
+      position: absolute;
+      content: '';
+      border: 23px solid transparent;
+      left: -48px;
+      top: 50%;
+      margin-top: -24px;
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+      transform: scaleY(0.5); }
+  .calendar .Events-info {
+    position: relative;
+    display: table-cell;
+    padding: 8px;
+    height: 95px;
+    background-color: #dddddd;
+    color: #000;
+    text-align: left;
+    overflow: hidden; }
+    .calendar .Events-info a {
+      color: #000; }
+    .calendar .Events-info .Events-info-title {
+      font-family: "PT Sans";
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-stretch: extra-condensed;
+      line-height: 1; }
+    .calendar .Events-info .Events-info-lid {
+      margin-top: 5px;
+      line-height: 0.95; }
+    .calendar .Events-info .Events-info-content {
+      max-height: 75px;
+      overflow: hidden; }
+  .calendar .Events-button {
+    display: table-cell;
+    width: 190px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #dddddd; }
+    .calendar .Events-button button {
+      width: 160px;
+      height: 40px;
+      background-color: #c00404;
+      font-family: "PT Sans";
+      font-size: 22px;
+      color: #fff; }
 
 .contacts {
   background-image: url("/pctrs/contacts_bgr.png");
@@ -664,125 +664,136 @@ header {
   right: -40px;
   bottom: -140px; }
 
-.seminars h1 {
-  background-image: url("/pctrs/h1_seminars.png"); }
-
-.seminars .content {
-  width: 80%;
-  margin: 0 auto; }
-
-.seminars .seminar-item {
-  position: relative;
-  height: 370px;
-  overflow: hidden;
-  margin: 0 15px;
-  padding: 20px 15px;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: left; }
-  .seminars .seminar-item .date {
+.seminars {
+  position: relative; }
+  .seminars .loader {
     position: absolute;
-    left: 15px;
-    top: 10px;
-    font-size: 40px;
-    font-weight: 700;
-    letter-spacing: -2px;
-    color: #c00404;
-    z-index: 1; }
-  .seminars .seminar-item h2 {
-    position: absolute;
-    left: 15px;
-    right: 15px;
-    top: 20px;
-    text-indent: 110px;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.1;
-    text-transform: uppercase;
-    height: 85px;
-    overflow: hidden;
-    z-index: 1; }
-  .seminars .seminar-item .white-line {
-    position: absolute;
-    left: 15px;
-    top: 120px;
-    width: 50%;
-    height: 1px;
-    border-bottom: solid 5px #fff;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 200px;
+    margin: -100px 0 0 -150px;
+    color: #000000;
     z-index: 1;
-    transform: translate3d(0, 60px, 0);
-    opacity: 0;
-    transition: opacity 0.35s, transform 0.35s; }
-  .seminars .seminar-item .more {
+    font-family: 'PT Sans Narrow';
+    font-size: 34px;
+    text-align: center; }
+  .seminars h1 {
+    background-image: url("/pctrs/h1_seminars.png"); }
+  .seminars .content {
+    width: 80%;
+    margin: 0 auto; }
+  .seminars .seminar-item {
+    position: relative;
+    height: 370px;
+    overflow: hidden;
+    margin: 0 15px;
+    padding: 20px 15px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: left; }
+    .seminars .seminar-item .date {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -2px;
+      color: #c00404;
+      z-index: 1; }
+    .seminars .seminar-item h2 {
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      top: 20px;
+      text-indent: 110px;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+      height: 85px;
+      overflow: hidden;
+      z-index: 1; }
+    .seminars .seminar-item .white-line {
+      position: absolute;
+      left: 15px;
+      top: 120px;
+      width: 50%;
+      height: 1px;
+      border-bottom: solid 5px #fff;
+      z-index: 1;
+      transform: translate3d(0, 60px, 0);
+      opacity: 0;
+      transition: opacity 0.35s, transform 0.35s; }
+    .seminars .seminar-item .more {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      padding: 140px 15px 0 15px;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 0;
+      transform: translate3d(0, 126px, 0);
+      opacity: 0;
+      transition: opacity 0.35s, transform 0.35s; }
+    .seminars .seminar-item .more-content {
+      heigth: 130px;
+      overflow: hidden;
+      font-weight: 300; }
+      .seminars .seminar-item .more-content p {
+        margin-bottom: 8px; }
+    .seminars .seminar-item:hover .white-line {
+      opacity: 1;
+      transform: translate3d(0, 0, 0); }
+    .seminars .seminar-item:hover .more {
+      opacity: 1;
+      transform: translate3d(0, 0, 0); }
+  .seminars .button-wrapper {
     position: absolute;
     left: 0;
-    top: 0;
     right: 0;
-    bottom: 0;
-    overflow: hidden;
-    padding: 140px 15px 0 15px;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 0;
-    transform: translate3d(0, 126px, 0);
-    opacity: 0;
-    transition: opacity 0.35s, transform 0.35s; }
-  .seminars .seminar-item .more-content {
-    heigth: 130px;
-    overflow: hidden;
-    font-weight: 300; }
-    .seminars .seminar-item .more-content p {
-      margin-bottom: 8px; }
-  .seminars .seminar-item:hover .white-line {
-    opacity: 1;
-    transform: translate3d(0, 0, 0); }
-  .seminars .seminar-item:hover .more {
-    opacity: 1;
-    transform: translate3d(0, 0, 0); }
-
-.seminars .button-wrapper {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 17px;
-  text-align: center; }
-  .seminars .button-wrapper button, .seminars .button-wrapper input[type=button] {
-    position: relative;
-    display: inline-block;
-    border: none;
-    background: #c00404;
-    padding: 10px 15px;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
-    outline: none;
-    cursor: pointer;
-    z-index: 1; }
-    .seminars .button-wrapper button:before, .seminars .button-wrapper input[type=button]:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    bottom: 17px;
+    text-align: center; }
+    .seminars .button-wrapper button, .seminars .button-wrapper input[type=button] {
+      position: relative;
+      display: inline-block;
+      border: none;
       background: #c00404;
-      z-index: 0;
-      opacity: 0;
-      -webkit-transform: scale3d(0.7, 1, 1);
-      transform: scale3d(0.4, 1, 1);
-      -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;
-      transition: transform 0.6s, opacity 0.6s;
-      -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-      transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1); }
-    .seminars .button-wrapper button:hover, .seminars .button-wrapper input[type=button]:hover {
-      background: transparent; }
-      .seminars .button-wrapper button:hover:before, .seminars .button-wrapper input[type=button]:hover:before {
+      padding: 10px 15px;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 400;
+      outline: none;
+      cursor: pointer;
+      z-index: 1; }
+      .seminars .button-wrapper button:before, .seminars .button-wrapper input[type=button]:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background: #c00404;
-        opacity: 1;
-        z-index: -1;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0); }
+        z-index: 0;
+        opacity: 0;
+        -webkit-transform: scale3d(0.7, 1, 1);
+        transform: scale3d(0.4, 1, 1);
+        -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;
+        transition: transform 0.6s, opacity 0.6s;
+        -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1); }
+      .seminars .button-wrapper button:hover, .seminars .button-wrapper input[type=button]:hover {
+        background: transparent; }
+        .seminars .button-wrapper button:hover:before, .seminars .button-wrapper input[type=button]:hover:before {
+          background: #c00404;
+          opacity: 1;
+          z-index: -1;
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
 
 .ReactModal {
   position: absolute;

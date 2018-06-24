@@ -33,7 +33,7 @@ class App extends Component {
 
     return (
       <div className="App">
-          <FullPage controls>
+          <FullPage>
               <Slide>
                   <Header />
               </Slide>
