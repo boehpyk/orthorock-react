@@ -585,84 +585,241 @@ header {
     display: block;
     margin: 0 auto; }
   header .logo {
+    margin: 0 auto; }
+
+.Header-menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 570px; }
+  .Header-menu a {
     display: block;
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    margin-left: -275px;
-    text-align: center; }
+    flex: 1 1 auto;
+    position: relative;
+    padding: 0;
+    transition: width 0.2s ease-out; }
+    .Header-menu a .text, .Header-menu a .img-animated {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.2s ease-in; }
+    .Header-menu a.About {
+      width: 179px; }
+      .Header-menu a.About:hover {
+        width: 224px; }
+        .Header-menu a.About:hover .text, .Header-menu a.About:hover .img1, .Header-menu a.About:hover .img2, .Header-menu a.About:hover .img3 {
+          opacity: 1; }
+        .Header-menu a.About:hover .img1 {
+          animation: shake-blink1 0.82s infinite ease-out; }
+        .Header-menu a.About:hover .img2 {
+          animation: shake-blink1 0.5s infinite ease-in; }
+        .Header-menu a.About:hover .img3 {
+          animation: blink1 1s infinite linear; }
+      .Header-menu a.About .text {
+        top: 0px;
+        left: -40px; }
+      .Header-menu a.About .img1 {
+        top: 95px;
+        left: -32px; }
+      .Header-menu a.About .img2 {
+        top: 91px;
+        right: -22px; }
+      .Header-menu a.About .img3 {
+        top: 101px;
+        left: 121px; }
+    .Header-menu a.Seminars {
+      width: 166px; }
+      .Header-menu a.Seminars:hover {
+        width: 208px; }
+        .Header-menu a.Seminars:hover .text, .Header-menu a.Seminars:hover .img1, .Header-menu a.Seminars:hover .img2, .Header-menu a.Seminars:hover .img3 {
+          opacity: 1; }
+        .Header-menu a.Seminars:hover .img1 {
+          animation: blink-enlarge 0.82s infinite ease-out; }
+        .Header-menu a.Seminars:hover .img2 {
+          animation: blink-enlarge 0.62s infinite ease-in; }
+      .Header-menu a.Seminars .text {
+        top: -30px;
+        left: -10px; }
+      .Header-menu a.Seminars .img1 {
+        top: 27px;
+        left: -48px; }
+      .Header-menu a.Seminars .img2 {
+        top: 27px;
+        right: -32px; }
+    .Header-menu a.Calendar {
+      width: 160px; }
+      .Header-menu a.Calendar:hover {
+        width: 200px; }
+        .Header-menu a.Calendar:hover .text, .Header-menu a.Calendar:hover .img1, .Header-menu a.Calendar:hover .img2, .Header-menu a.Calendar:hover .img3 {
+          opacity: 1; }
+        .Header-menu a.Calendar:hover .img1 {
+          animation: Seminars-img1 0.82s infinite ease-out; }
+        .Header-menu a.Calendar:hover .img2 {
+          animation: Seminars-img2 1s infinite ease-out; }
+        .Header-menu a.Calendar:hover .img3 {
+          animation: Seminars-img3 0.72s infinite ease-out; }
+      .Header-menu a.Calendar .text {
+        top: -75px;
+        left: -60px; }
+      .Header-menu a.Calendar .img1 {
+        top: -10px;
+        right: 10px; }
+      .Header-menu a.Calendar .img2 {
+        top: 42px;
+        right: 32px; }
+      .Header-menu a.Calendar .img3 {
+        top: 97px;
+        right: 22px; }
+    .Header-menu a.Photo {
+      width: 145px; }
+      .Header-menu a.Photo:hover {
+        width: 182px; }
+    .Header-menu a.Contacts {
+      width: 148px; }
+      .Header-menu a.Contacts:hover {
+        width: 186px; }
+    .Header-menu a img.main {
+      width: 100%;
+      height: auto; }
 
-.photo h1 {
-  background-image: url("/pctrs/h1_photo.png"); }
+@keyframes shake-blink1 {
+  10%, 90% {
+    transform: translate3d(0px, 0, 0);
+    opacity: 1; }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+    opacity: 0.8; }
+  30%, 50%, 70% {
+    transform: translate3d(-3px, 0, 0);
+    opacity: 1; }
+  40%, 60% {
+    transform: translate3d(3px, 0, 0);
+    opacity: 0.8; } }
 
-.photo .content {
-  position: relative;
-  width: 80%;
-  margin: 0 auto; }
-
-.photo .seminar-item {
-  position: relative;
-  overflow: hidden;
-  min-height: 275px;
-  margin: 0 5px;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  text-align: left;
-  font-family: "PT Sans Narrow";
-  color: #fff; }
-  .photo .seminar-item .info {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 130px;
-    transform: translateY(66px);
-    transition: transform 0.5s ease;
-    z-index: 1; }
-  .photo .seminar-item .date-title {
-    font-size: 20px;
-    line-height: 0.9;
-    height: 65px;
-    overflow: hidden;
-    padding: 5px 20px; }
-  .photo .seminar-item button {
-    border: none;
-    background-color: #c00404;
-    width: 100%;
-    height: 65px;
-    overflow: hidden;
-    padding: 20px;
-    text-decoration: underline;
-    font-size: 22px;
-    text-transform: uppercase;
-    font-family: "PT Sans Narrow";
-    color: #fff;
-    cursor: pointer; }
-  .photo .seminar-item .overlay {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    opacity: 1;
-    transition: opacity 0.5s ease; }
-  .photo .seminar-item:hover .info {
-    transform: translateY(0); }
-  .photo .seminar-item:hover .overlay {
+@keyframes blink1 {
+  from {
     opacity: 0; }
+  50% {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
 
-.photo .slick-slider {
-  height: 275px; }
+@keyframes blink-enlarge {
+  from {
+    opacity: 1;
+    transform: scale(1, 1); }
+  70% {
+    opacity: 1;
+    transform: scale(1.4, 1.4); }
+  to {
+    opacity: 0;
+    transform: scale(1.5, 1.5); } }
 
-.photo .find-yourself {
-  position: absolute;
-  right: -40px;
-  bottom: -140px; }
+@keyframes Seminars-img1 {
+  from {
+    opacity: 1;
+    transform: translate(0, 0); }
+  to {
+    opacity: 0;
+    transform: translate(50px, -50px); } }
+
+@keyframes Seminars-img2 {
+  from {
+    opacity: 1;
+    transform: translate(0, 0); }
+  to {
+    opacity: 0;
+    transform: translate(-10px, -80px); } }
+
+@keyframes Seminars-img3 {
+  from {
+    opacity: 1;
+    transform: translate(0, 0); }
+  to {
+    opacity: 0;
+    transform: translate(50px, 0px); } }
+
+.photo {
+  position: relative; }
+  .photo .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 200px;
+    margin: -100px 0 0 -150px;
+    color: #fff;
+    z-index: 1;
+    font-family: 'PT Sans Narrow';
+    font-size: 34px;
+    text-align: center; }
+  .photo h1 {
+    background-image: url("/pctrs/h1_photo.png"); }
+  .photo .content {
+    position: relative;
+    width: 80%;
+    margin: 0 auto; }
+  .photo .seminar-item {
+    position: relative;
+    overflow: hidden;
+    min-height: 275px;
+    margin: 0 5px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    text-align: left;
+    font-family: "PT Sans Narrow";
+    color: #fff; }
+    .photo .seminar-item .info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 130px;
+      transform: translateY(66px);
+      transition: transform 0.5s ease;
+      z-index: 1; }
+    .photo .seminar-item .date-title {
+      font-size: 20px;
+      line-height: 0.9;
+      height: 65px;
+      overflow: hidden;
+      padding: 5px 20px; }
+    .photo .seminar-item button {
+      border: none;
+      background-color: #c00404;
+      width: 100%;
+      height: 65px;
+      overflow: hidden;
+      padding: 20px;
+      text-decoration: underline;
+      font-size: 22px;
+      text-transform: uppercase;
+      font-family: "PT Sans Narrow";
+      color: #fff;
+      cursor: pointer; }
+    .photo .seminar-item .overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      opacity: 1;
+      transition: opacity 0.5s ease; }
+    .photo .seminar-item:hover .info {
+      transform: translateY(0); }
+    .photo .seminar-item:hover .overlay {
+      opacity: 0; }
+  .photo .slick-slider {
+    height: 275px; }
+  .photo .find-yourself {
+    position: absolute;
+    right: -40px;
+    bottom: -140px; }
 
 .seminars {
   position: relative; }
@@ -673,7 +830,7 @@ header {
     width: 300px;
     height: 200px;
     margin: -100px 0 0 -150px;
-    color: #000000;
+    color: #fff;
     z-index: 1;
     font-family: 'PT Sans Narrow';
     font-size: 34px;

@@ -6,11 +6,208 @@ header {
     margin: 0 auto;
   }
   .logo {
+    margin: 0 auto;
+  }
+}
+.Header-menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 570px;
+  a {
     display: block;
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    margin-left: -275px;
-    text-align: center;
+    flex: 1 1 auto;
+    position: relative;
+    padding: 0;
+    transition: width 0.2s ease-out;
+    .text, .img-animated {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.2s ease-in;
+    }
+    &.About {
+      width: 179px;
+      &:hover {
+        width: 224px;
+        .text, .img1, .img2, .img3 {
+          opacity: 1;
+        }
+        .img1 {
+          animation: shake-blink1 0.82s infinite ease-out;
+        }
+        .img2 {
+          animation: shake-blink1 0.5s infinite ease-in;
+        }
+        .img3 {
+          animation: blink1 1s infinite linear;
+        }
+      }
+      .text {
+        top: 0px;
+        left: -40px;
+      }
+      .img1 {
+        top: 95px;
+        left: -32px;
+      }
+      .img2 {
+        top: 91px;
+        right: -22px;
+      }
+      .img3 {
+        top: 101px;
+        left: 121px;
+      }
+    }
+    &.Seminars {
+      width: 166px;
+      &:hover {
+        width: 208px;
+        .text, .img1, .img2, .img3 {
+          opacity: 1;
+        }
+        .img1 {
+          animation: blink-enlarge 0.82s infinite ease-out;
+        }
+        .img2 {
+          animation: blink-enlarge 0.62s infinite ease-in;
+        }
+
+      }
+      .text {
+        top: -30px;
+        left: -10px;
+      }
+      .img1 {
+        top: 27px;
+        left: -48px;
+      }
+      .img2 {
+        top: 27px;
+        right: -32px;
+      }
+    }
+    &.Calendar {
+      width: 160px;
+      &:hover {
+        width: 200px;
+        .text, .img1, .img2, .img3 {
+          opacity: 1;
+        }
+        .img1 {
+          animation: Seminars-img1 0.82s infinite ease-out;
+        }
+        .img2 {
+          animation: Seminars-img2 1s infinite ease-out;
+        }
+        .img3 {
+          animation: Seminars-img3 0.72s infinite ease-out;
+        }
+      }
+      .text {
+        top: -75px;
+        left: -60px;
+      }
+      .img1 {
+        top: -10px;
+        right: 10px;
+      }
+      .img2 {
+        top: 42px;
+        right: 32px;
+      }
+      .img3 {
+        top: 97px;
+        right: 22px;
+      }
+    }
+    &.Photo {
+      width: 145px;
+      &:hover {
+        width: 182px;
+      }
+    }
+    &.Contacts {
+      width: 148px;
+      &:hover {
+        width: 186px;
+      }
+    }
+    img.main {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@keyframes shake-blink1 {
+  10%, 90% {
+    transform: translate3d(0px, 0, 0);
+    opacity: 1;
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+    opacity: 0.8;
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-3px, 0, 0);
+    opacity: 1;
+  }
+
+  40%, 60% {
+    transform: translate3d(3px, 0, 0);
+    opacity: 0.8;
+  }
+}
+@keyframes blink1 {
+  from  { opacity:  0; }
+  50% { opacity:  1; }
+  to { opacity:  0; }
+}
+@keyframes blink-enlarge {
+  from  {
+    opacity:  1;
+    transform: scale(1, 1);
+  }
+  70% {
+    opacity:  1;
+    transform: scale(1.4, 1.4);
+  }
+  to {
+    opacity:  0;
+    transform: scale(1.5, 1.5);
+  }
+}
+@keyframes Seminars-img1 {
+  from  {
+    opacity:  1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity:  0;
+    transform: translate(50px, -50px);
+  }
+}
+@keyframes Seminars-img2 {
+  from  {
+    opacity:  1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity:  0;
+    transform: translate(-10px, -80px);
+  }
+}
+@keyframes Seminars-img3 {
+  from  {
+    opacity:  1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity:  0;
+    transform: translate(50px, 0px);
   }
 }

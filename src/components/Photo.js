@@ -4,6 +4,7 @@ import {loadGalleries} from '../AC/galleries';
 import {openModal} from '../AC/modals';
 import Slider from 'react-slick';
 import GalleryItem from './GalleryItem';
+import Loader from './Utils/Loader';
 
 
 class Photo extends Component {
@@ -42,7 +43,7 @@ class Photo extends Component {
 
 
       if (fetching || galleries.length === 0) {
-          return 'Loading...';
+          return <Loader text="Загрузка галерей" />;
       }
       else {
           const listItems = galleries.map((gallery) => <li key={gallery.id}><GalleryItem gallery = {gallery} /></li>)

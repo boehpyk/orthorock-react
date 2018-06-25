@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { FullPage, Slide } from 'react-full-page';
+import {SectionsContainer, Section} from 'react-fullpage';
 import Modal from 'react-modal';
-
 import Header from './Header';
 import About from './About';
 import Seminars from './Seminars';
@@ -31,28 +30,38 @@ class App extends Component {
 
   render() {
 
+      let options = {
+          anchors:              ['Header', 'About', 'Seminars', 'Calendar', 'Photo', 'Contacts'],
+          scrollBar:            false,
+          navigation:           false,
+          verticalAlign:        false,
+          sectionPaddingTop:    '0',
+          sectionPaddingBottom: '0',
+          arrowNavigation:      false
+      };
+
     return (
       <div className="App">
-          <FullPage>
-              <Slide>
+          <SectionsContainer {...options}>
+              <Section>
                   <Header />
-              </Slide>
-              <Slide>
+              </Section>
+              <Section>
                   <About />
-              </Slide>
-              <Slide>
+              </Section>
+              <Section>
                   <Seminars />
-              </Slide>
-              <Slide>
+              </Section>
+              <Section>
                   <Calendar />
-              </Slide>
-              <Slide>
+              </Section>
+              <Section>
                   <Photo />
-              </Slide>
-              <Slide>
+              </Section>
+              <Section>
                   <Contacts />
-              </Slide>
-          </FullPage>
+              </Section>
+          </SectionsContainer>
           <Modal
                 isOpen={this.props.modal.modalType ? true : false }
                 contentLabel="Example Modal"
