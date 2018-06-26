@@ -9,7 +9,7 @@ class Header extends Component {
                 <img src="/pctrs/logo.png" border="0" alt='' />
               </div>
               <div className="Header-menu">
-                  <a className="About" href="#About" ref={ this.setAboutRef } onMouseOver={ this.setAboutActive }>
+                  <a className="About" href="#About">
                       <img src="/pctrs/Menu_About_big.png" className="main" border="0" alt="О нас" />
                       <div className="text">
                           <img src="/pctrs/Menu_About-text.png" border="0" alt="О нас" />
@@ -37,23 +37,27 @@ class Header extends Component {
                   </a>
                   <a className="Photo" href="#Photo">
                       <img src="/pctrs/Menu_Photo_big.png" className="main" border="0"  alt="Фотогалерея" />
+                      <div className="text">
+                          <img src="/pctrs/Menu_Photo-text.png" border="0" alt="Фотогалерея" />
+                      </div>
+                      <img src="/pctrs/Menu_Photo-img1.png" className="img-animated img1" border="0" alt="Фотогалерея" />
+                      <img src="/pctrs/Menu_photo-img2.png" className="img-animated img2" border="0" alt="Фотогалерея" />
+                      <img src="/pctrs/Menu_Photo-img3.png" className="img-animated img3" border="0" alt="Фотогалерея" />
+                      <img src="/pctrs/Menu_photo-img4.png" className="img-animated img4" border="0" alt="Фотогалерея" />
+                      <img src="/pctrs/Menu_Photo-img5.png" className="img-animated img5" border="0" alt="Фотогалерея" />
+                      <img src="/pctrs/Menu_photo-img6.png" className="img-animated img6" border="0" alt="Фотогалерея" />
                   </a>
                   <a className="Contacts" href="#Contacts">
                       <img src="/pctrs/Menu_Contacts_big.png" className="main" border="0"  alt="Контакты" />
+                      <div className="text">
+                          <img src="/pctrs/Menu_Contacts-text.png" border="0" alt="Контакты" />
+                      </div>
+                      <img src="/pctrs/Menu_Contacts-img1.png" className="img-animated img1" border="0" alt="Контакты" />
                   </a>
               </div>
           </div>
       </header>
     );
-  }
-
-  setAboutActive = (event) => {
-      // const el = this.aboutRef.getElementsByTagName('img')[0].src = '/pctrs/Menu_About_a.png';
-      console.log(event.target);
-  }
-
-  setAboutRef = about => {
-      this.aboutRef = about;
   }
 
 }

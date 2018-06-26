@@ -126,12 +126,78 @@ header {
       width: 145px;
       &:hover {
         width: 182px;
+        .text, .img1, .img2, .img3, .img4, .img5, .img6 {
+          opacity: 1;
+        }
+        .img1 {
+          animation: shake-blink1 0.42s infinite ease-out;
+        }
+        .img2 {
+          animation: Photos-img2 0.62s infinite ease-out;
+        }
+        .img3 {
+          animation: Photos-img3 0.62s infinite ease-in;
+        }
+        .img4 {
+          animation: Photos-img4 0.62s infinite ease-in;
+        }
+        .img5 {
+          animation: Photos-img5 0.58s infinite ease-out;
+        }
+        .img6 {
+          animation: Photos-img6 0.58s infinite ease-out;
+        }
+
+      }
+      .text {
+        top: -25px;
+        left: -80px;
+      }
+      .img1 {
+        top: 156px;
+        right: 80px;
+      }
+      .img2 {
+        top: 262px;
+        left: 40px;
+      }
+      .img3 {
+        top: 282px;
+        left: 10px;
+      }
+      .img4 {
+        top: 302px;
+        left: 40px;
+      }
+      .img5 {
+        top: 322px;
+        right: 40px;
+      }
+      .img6 {
+        top: 302px;
+        right: 45px;
       }
     }
     &.Contacts {
       width: 148px;
       &:hover {
         width: 186px;
+        .text, .img1 {
+          opacity: 1;
+        }
+        .img1 {
+          animation: blink-enlarge 0.62s infinite ease-out;
+        }
+      }
+      .text {
+        top: -15px;
+        right: -150px;
+        z-index: 2;
+      }
+      .img1 {
+        top: -55px;
+        left: -35px;
+        z-index: 1;
       }
     }
     img.main {
@@ -209,5 +275,55 @@ header {
   to {
     opacity:  0;
     transform: translate(50px, 0px);
+  }
+}
+@keyframes Photos-img2 {
+  from  {
+    opacity:  1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity:  0;
+    transform: translate(-80px, -10px);
+  }
+}
+@keyframes Photos-img3 {
+  from  {
+    opacity:  1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity:  0;
+    transform: translate(-80px, 40px);
+  }
+}
+@keyframes Photos-img4 {
+  from  {
+    opacity:  1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity:  0;
+    transform: translate(-50px, 100px);
+  }
+}
+@keyframes Photos-img5 {
+  from  {
+    opacity:  1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity:  0;
+    transform: translate(50px, 40px);
+  }
+}
+@keyframes Photos-img6 {
+  from  {
+    opacity:  1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity:  0;
+    transform: translate(50px, 10px);
   }
 }

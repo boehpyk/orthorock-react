@@ -7,6 +7,7 @@ import ReactHtmlParser from 'react-html-parser';
 import Slider from 'react-slick'
 import SeminarForm from "./SeminarForm";
 import {GLOBAL_URL} from '../../constants/config';
+import Loader from '../Utils/Loader'
 
 class ShowEventModal extends Component {
 
@@ -50,7 +51,12 @@ class ShowEventModal extends Component {
 
 
         if (fetching || event === undefined) {
-            return 'Loading...';
+            return (
+                <div className="ModalContent-content">
+                    <Loader text="Загрузка" />
+                </div>
+            );
+
         }
         else {
             const imageSrc = `${ this.remoteImageSrc }/uplds/${event.id}/sm_${event.image}`;

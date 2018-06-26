@@ -674,10 +674,57 @@ header {
       width: 145px; }
       .Header-menu a.Photo:hover {
         width: 182px; }
+        .Header-menu a.Photo:hover .text, .Header-menu a.Photo:hover .img1, .Header-menu a.Photo:hover .img2, .Header-menu a.Photo:hover .img3, .Header-menu a.Photo:hover .img4, .Header-menu a.Photo:hover .img5, .Header-menu a.Photo:hover .img6 {
+          opacity: 1; }
+        .Header-menu a.Photo:hover .img1 {
+          animation: shake-blink1 0.42s infinite ease-out; }
+        .Header-menu a.Photo:hover .img2 {
+          animation: Photos-img2 0.62s infinite ease-out; }
+        .Header-menu a.Photo:hover .img3 {
+          animation: Photos-img3 0.62s infinite ease-in; }
+        .Header-menu a.Photo:hover .img4 {
+          animation: Photos-img4 0.62s infinite ease-in; }
+        .Header-menu a.Photo:hover .img5 {
+          animation: Photos-img5 0.58s infinite ease-out; }
+        .Header-menu a.Photo:hover .img6 {
+          animation: Photos-img6 0.58s infinite ease-out; }
+      .Header-menu a.Photo .text {
+        top: -25px;
+        left: -80px; }
+      .Header-menu a.Photo .img1 {
+        top: 156px;
+        right: 80px; }
+      .Header-menu a.Photo .img2 {
+        top: 262px;
+        left: 40px; }
+      .Header-menu a.Photo .img3 {
+        top: 282px;
+        left: 10px; }
+      .Header-menu a.Photo .img4 {
+        top: 302px;
+        left: 40px; }
+      .Header-menu a.Photo .img5 {
+        top: 322px;
+        right: 40px; }
+      .Header-menu a.Photo .img6 {
+        top: 302px;
+        right: 45px; }
     .Header-menu a.Contacts {
       width: 148px; }
       .Header-menu a.Contacts:hover {
         width: 186px; }
+        .Header-menu a.Contacts:hover .text, .Header-menu a.Contacts:hover .img1 {
+          opacity: 1; }
+        .Header-menu a.Contacts:hover .img1 {
+          animation: blink-enlarge 0.62s infinite ease-out; }
+      .Header-menu a.Contacts .text {
+        top: -15px;
+        right: -150px;
+        z-index: 2; }
+      .Header-menu a.Contacts .img1 {
+        top: -55px;
+        left: -35px;
+        z-index: 1; }
     .Header-menu a img.main {
       width: 100%;
       height: auto; }
@@ -738,6 +785,46 @@ header {
   to {
     opacity: 0;
     transform: translate(50px, 0px); } }
+
+@keyframes Photos-img2 {
+  from {
+    opacity: 1;
+    transform: translate(0, 0); }
+  to {
+    opacity: 0;
+    transform: translate(-80px, -10px); } }
+
+@keyframes Photos-img3 {
+  from {
+    opacity: 1;
+    transform: translate(0, 0); }
+  to {
+    opacity: 0;
+    transform: translate(-80px, 40px); } }
+
+@keyframes Photos-img4 {
+  from {
+    opacity: 1;
+    transform: translate(0, 0); }
+  to {
+    opacity: 0;
+    transform: translate(-50px, 100px); } }
+
+@keyframes Photos-img5 {
+  from {
+    opacity: 1;
+    transform: translate(0, 0); }
+  to {
+    opacity: 0;
+    transform: translate(50px, 40px); } }
+
+@keyframes Photos-img6 {
+  from {
+    opacity: 1;
+    transform: translate(0, 0); }
+  to {
+    opacity: 0;
+    transform: translate(50px, 10px); } }
 
 .photo {
   position: relative; }
