@@ -1,5 +1,5 @@
 import { LOAD_EVENT, REQUEST, SUCCESS } from '../constants/events';
-import {HIDE_MODAL} from "../constants/modals";
+// import {HIDE_MODAL} from "../constants/modals";
 
 const initialState = {
     events: {},

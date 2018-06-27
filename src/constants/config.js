@@ -1,1 +1,1 @@
-export const GLOBAL_URL = 'https://orthorock.work';
+export const GLOBAL_URL = (process.env.NODE_ENV === 'development') ? 'https://orthorock.work' : '';

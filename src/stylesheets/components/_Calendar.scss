@@ -39,7 +39,7 @@
     width: calc(100% - 370px);
   }
   .DayPicker, .DayPicker-Month {
-    width: 100%;
+    width: 370px;
     font-family: 'PT Sans';
     font-size: 22px;
   }
@@ -87,6 +87,7 @@
     table-layout:fixed;
     width: 100%;
     padding-bottom: 5px;
+    position: relative;
     &:hover {
       .Events-spacer {
         &:after {
@@ -139,7 +140,7 @@
     }
   }
   .Events-info {
-    position: relative;
+    position: absolute;
     display: table-cell;
     padding: 8px;
     //width: calc(100% - 125px);
@@ -148,6 +149,7 @@
     color: #000;
     text-align: left;
     overflow: hidden;
+    width: calc(100% - 290px);
     a {
       color: #000;
     }
@@ -181,6 +183,7 @@
       font-family: "PT Sans";
       font-size: 22px;
       color: #fff;
+      border: none;
     }
   }
 }

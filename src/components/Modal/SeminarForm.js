@@ -127,15 +127,23 @@ class SeminarForm extends Component {
 
     sendData = async (data) => {
 
-        return fetch(this.enrollURL, {
+        const headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        };
+        const options = (process.env.NODE_ENV === 'development') ? {
             method: 'POST',
             mode: 'cors',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
+            headers: headers,
             body:  JSON.stringify(data)
-        })
+
+        } : {
+            method: 'POST',
+            headers: headers,
+            body:  JSON.stringify(data)
+        };
+
+        return fetch(this.enrollURL, options)
         .then(function(response){
             return response.json();
         })

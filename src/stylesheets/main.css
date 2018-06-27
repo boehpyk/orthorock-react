@@ -412,7 +412,7 @@ section {
     float: right;
     width: calc(100% - 370px); }
   .calendar .DayPicker, .calendar .DayPicker-Month {
-    width: 100%;
+    width: 370px;
     font-family: 'PT Sans';
     font-size: 22px; }
   .calendar .DayPicker-Caption {
@@ -447,7 +447,8 @@ section {
     display: table;
     table-layout: fixed;
     width: 100%;
-    padding-bottom: 5px; }
+    padding-bottom: 5px;
+    position: relative; }
     .calendar .Events-row:hover .Events-spacer:after {
       left: 0;
       border-left-color: #c00404; }
@@ -485,14 +486,15 @@ section {
       transition: all 0.2s ease-out;
       transform: scaleY(0.5); }
   .calendar .Events-info {
-    position: relative;
+    position: absolute;
     display: table-cell;
     padding: 8px;
     height: 95px;
     background-color: #dddddd;
     color: #000;
     text-align: left;
-    overflow: hidden; }
+    overflow: hidden;
+    width: calc(100% - 290px); }
     .calendar .Events-info a {
       color: #000; }
     .calendar .Events-info .Events-info-title {
@@ -520,7 +522,8 @@ section {
       background-color: #c00404;
       font-family: "PT Sans";
       font-size: 22px;
-      color: #fff; }
+      color: #fff;
+      border: none; }
 
 .contacts {
   background-image: url("/pctrs/contacts_bgr.png");

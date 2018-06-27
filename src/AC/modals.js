@@ -1,4 +1,4 @@
-import {SHOW_MODAL, HIDE_MODAL, SHOW_EVENT} from '../constants/modals';
+import {SHOW_MODAL, HIDE_MODAL} from '../constants/modals';
 
 export function openModal(modal) {
     return (dispatch, getState) => {

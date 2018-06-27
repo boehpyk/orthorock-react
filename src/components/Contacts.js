@@ -3,7 +3,7 @@ import {GLOBAL_URL} from '../constants/config';
 import {openModal} from '../AC/modals'
 import {SHOW_SUBSCRIBE, SHOW_CONFIRM} from '../constants/modals'
 import {connect} from 'react-redux';
-import queryString from 'query-string'
+import { parseQueryString } from '../Util/parseQueryString'
 
 class Contacts extends Component {
 
@@ -20,7 +20,8 @@ class Contacts extends Component {
     confirmData = {};
 
     componentWillMount() {
-        this.confirmData = queryString.parse(window.location.search);
+
+        this.confirmData = parseQueryString(window.location.search);
 
         this.confirmEmail = this.confirmData.email || null;
         this.confirmCode = this.confirmData.confirm || null;
