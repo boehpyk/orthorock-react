@@ -1,15 +1,21 @@
 .ReactModal {
   position: absolute;
   top: 40px;
-  left: 50%;
   bottom: 40px;
-  margin-left: -450px;
   background-color: #ffffff;
   width: 90%;
   max-width: 900px;
   padding: 25px;
   outline: none;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include media-less-than($md-width) {
+    left: 5%;
+  }
+  @include media-more-than($md-width) {
+    left: 50%;
+    margin-left: -450px;
+  }
 }
 
 .ReactModal-Overlay {
@@ -22,28 +28,29 @@
 }
 
 .ReactModal__Body--open {
-  //overflow: hidden;
-  //position: fixed;
-  //width: 100%;
-  //height: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 .ModalContent {
   position: relative;
   color: #000;
   height: 100%;
+  overflow: hidden;
   .slick-track {
     transition: transform 600ms ease;
   }
 }
 .ModalContent-close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -8px;
+  right: -2px;
   border: none;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: bold;
-  transform: scale3d(1.2, 1, 1);
+  //transform: scale3d(1.2, 1, 1);
   background: transparent;
 }
 .ModalContent-wrapper {
@@ -106,8 +113,14 @@
 .ModalContent-info {
   padding: 25px 0;
   .main-image {
-    float: right;
-    margin: 0 0 15px 15px;
+    @include media-less-than($sm-width) {
+      display: none;
+    }
+    @include media-more-than($sm-width) {
+      float: right;
+      margin: 0 0 15px 15px;
+    }
+
   }
   .item-row {
     margin-bottom: 15px;

@@ -11,11 +11,21 @@
     padding: 0 30px;
   }
   .left, .right {
-    float: left;
+    @include media-less-than($sm-width) {
+      float: none;
+    }
+    @include media-more-than($sm-width) {
+      float: left;
+    }
     font-family: "PT Sans Narrow";
   }
   .left {
-    width: 45%;
+    @include media-less-than($md-width) {
+      width: 100%;
+    }
+    @include media-more-than($md-width) {
+      width: 45%;
+    }
     font-size: 24px;
     line-height: 1.2;
     padding-top: 40px;
@@ -25,8 +35,13 @@
     }
   }
   .right {
+    @include media-less-than($md-width) {
+      width: 100%;
+    }
+    @include media-more-than($md-width) {
+      width: 55%;
+    }
     display: table;
-    width: 55%;
     background: url('/pctrs/contacts_email_bgr.png') left top no-repeat;
     padding: 40px 0 90px 130px;
   }

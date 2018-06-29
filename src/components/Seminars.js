@@ -41,10 +41,18 @@ class Seminars extends Component {
               infinite: true,
               speed: 500,
               slidesToShow: 2,
-              slidesToScroll: 1
+              slidesToScroll: 1,
+              responsive: [
+                  {
+                      breakpoint: 900,
+                      settings: {
+                          slidesToShow: 1
+                      }
+                  }
+              ]
           };
           return (
-              <div>
+              <div className="Seminars-slider">
                   <Slider {...settings}>
                       {listItems}
                   </Slider>

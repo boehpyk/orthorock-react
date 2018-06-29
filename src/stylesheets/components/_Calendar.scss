@@ -23,6 +23,11 @@
     width: 100%;
     padding: 0 15px;
   }
+  .Calendar-content {
+    @include media-less-than($lg-width) {
+      margin-top: 140px;
+    }
+  }
   .left, .right {
     position: relative;
     height: 430px;
@@ -31,15 +36,35 @@
     }
   }
   .left {
-    float: left;
-    width: 370px;
+    @include media-less-than($lg-width) {
+      float: none;
+      width: 100%;
+      text-align: center;
+    }
+    @include media-more-than($lg-width) {
+      float: left;
+      width: 370px;
+    }
   }
   .right {
-    float: right;
-    width: calc(100% - 370px);
+    @include media-less-than($lg-width) {
+      float: none;
+      width: 100%;
+      padding-top: 20px;
+    }
+    @include media-more-than($lg-width) {
+      float: right;
+      width: calc(100% - 370px);
+    }
   }
   .DayPicker, .DayPicker-Month {
-    width: 370px;
+    @include media-less-than($lg-width) {
+      width: 80%;
+      margin: 20px auto;
+    }
+    @include media-more-than($lg-width) {
+      width: 370px;
+    }
     font-family: 'PT Sans';
     font-size: 22px;
   }
@@ -80,7 +105,10 @@
   .Events {
     width: 100%;
     font-family: 'PT Sans';
-    padding-left: 45px;
+    @include media-more-than($lg-width) {
+      padding-left: 45px;
+    }
+
   }
   .Events-row {
     display: table;

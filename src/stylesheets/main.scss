@@ -1,12 +1,3 @@
-@mixin my-transition($obj, $duration, $mode) {
-  -webkit-transition: $obj $duration $mode;
-  -moz-transition: $obj $duration $mode;
-  -ms-transition: $obj $duration $mode;
-  -o-transition: $obj $duration $mode;
-  transition: $obj $duration $mode;
-
-}
-
 @import 'util/all';
 @import 'base/all';
 @import 'components/all';

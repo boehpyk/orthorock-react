@@ -20,6 +20,11 @@
     width: 80%;
     margin: 0 auto;
   }
+  .Seminars-slider {
+    @include media-less-than($sm-width) {
+      margin-top: 40px;
+    }
+  }
   .seminar-item {
     position: relative;
     height: 370px;

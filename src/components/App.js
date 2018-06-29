@@ -28,7 +28,38 @@ Modal.setAppElement('#root');
 
 class App extends Component {
 
+    state = {
+        screenWidth: window.innerWidth,
+    }
+
+    componentWillMount() {
+        window.addEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    componentDidMount() {
+        window.addEventListener('click', this.handleDocumentClick);
+    }
+
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
+        window.removeEventListener('click', this.handleDocumentClick);
+    }
+
+    handleWindowSizeChange = () => {
+        this.setState({ screenWidth: window.innerWidth });
+    };
+
+    handleDocumentClick = (event) => {
+        if (event.target.classList.contains('ReactModal__Overlay')) {
+            this.props.hideModal();
+        }
+    }
+
   render() {
+
+      const { screenWidth } = this.state;
+      const isMobile = screenWidth <= 768;
 
       let options = {
           anchors:              ['Header', 'About', 'Seminars', 'Calendar', 'Photo', 'Contacts'],
@@ -42,40 +73,55 @@ class App extends Component {
 
     return (
       <div className="App">
-          <SectionsContainer {...options}>
-              <Section>
-                  <Header />
-              </Section>
-              <Section>
-                  <About />
-              </Section>
-              <Section>
-                  <Seminars />
-              </Section>
-              <Section>
-                  <Calendar />
-              </Section>
-              <Section>
-                  <Photo />
-              </Section>
-              <Section>
-                  <Contacts />
-              </Section>
-          </SectionsContainer>
+          {
+              isMobile ? (
+                  <div>
+                      <Header />
+                      <About />
+                      <Seminars />
+                      <Calendar />
+                      <Photo />
+                      <Contacts />
+                  </div>
+
+              ) : (
+                  <SectionsContainer {...options}>
+                      <Section>
+                          <Header/>
+                      </Section>
+                      <Section>
+                          <About/>
+                      </Section>
+                      <Section>
+                          <Seminars/>
+                      </Section>
+                      <Section>
+                          <Calendar/>
+                      </Section>
+                      <Section>
+                          <Photo/>
+                      </Section>
+                      <Section>
+                          <Contacts/>
+                      </Section>
+                  </SectionsContainer>
+              )
+          }
           <Modal
                 isOpen={this.props.modal.modalType ? true : false }
                 contentLabel="Example Modal"
                 className="ReactModal"
                 overlayClassName="ReactModal-Overlay"
           >
+              <button onClick={ this.closeModal } className="ModalContent-close">&#215;</button>
               <div className="ModalContent">
-                  <button onClick={ this.closeModal } className="ModalContent-close">x</button>
                   { this.getModal() }
               </div>
           </Modal>
       </div>
     );
   }
+
 
   getModal()
   {
@@ -90,6 +136,7 @@ class App extends Component {
   closeModal = () => {
       this.props.hideModal();
   }
+
 }
 
 // export default App;

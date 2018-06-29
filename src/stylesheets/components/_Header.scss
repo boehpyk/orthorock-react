@@ -15,6 +15,9 @@ header {
   justify-content: center;
   align-items: center;
   min-height: 570px;
+  @include media-less-than($sm-width) {
+    display: none;
+  }
   a {
     display: block;
     flex: 1 1 auto;

@@ -16,7 +16,7 @@ class ShowEventModal extends Component {
     }
 
     state = {
-        show:       'info',
+        show:           'info'
     }
 
     remoteImageSrc = GLOBAL_URL;
@@ -24,8 +24,27 @@ class ShowEventModal extends Component {
 
     componentDidMount() {
         this.props.loadEventIntoModal(this.props.eventId);
+        window.addEventListener('resize', this.handleWindowSizeChange);
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    componentDidUpdate() {
+        this.handleWindowSizeChange();
+    }
+
+    handleWindowSizeChange = () => {
+        const container = document.getElementsByClassName('ReactModal__Content')[0];
+        const headerHeight = (this.headerRef !== undefined) ? this.headerRef.offsetHeight : 0;
+        const contentHeight = (this.contentRef !== undefined) ? this.contentRef.offsetHeight : 0;
+        const containerHeight = (container !== undefined) ? container.clientHeight : 0;
+
+        if (headerHeight > 0 && contentHeight > 0 && containerHeight > 0) {
+            this.contentRef.style.height = `${(containerHeight - headerHeight - 20)}px`;
+        }
+    };
 
 
     render() {
@@ -69,7 +88,7 @@ class ShowEventModal extends Component {
 
             return (
                 <div>
-                    <div className="ModalContent-header">
+                    <div className="ModalContent-header" ref={this.setHeaderRef}>
                         <div className="left">
                             <span className="date">{ moment(event.datebegin).format('DD/MM') }</span> { event.title }
                         </div>
@@ -77,7 +96,7 @@ class ShowEventModal extends Component {
                             <button onClick={ this.handleSlides }>{ this.state.show === 'form' ? 'Подробнее' : 'Записаться'}</button>
                         </div>
                     </div>
-                    <div className="ModalContent-content">
+                    <div className="ModalContent-content" ref={this.setContentRef}>
                         <Slider ref={slider => (this.slider = slider)} {...Slidersettings}>
                             <div className="ModalContent-info">
 
@@ -145,6 +164,12 @@ class ShowEventModal extends Component {
         show: 'form'
     })
 
+    setHeaderRef = header => {
+        this.headerRef = header;
+    }
+    setContentRef = content => {
+        this.contentRef = content;
+    }
 }
 
 // const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });

@@ -1,3 +1,4 @@
+/* Breakpoints */
 .img-responsive {
   display: block;
   max-width: 100%;
@@ -96,21 +97,22 @@ body {
 
 header, section {
   width: 100%;
-  height: 100%;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   padding-top: 50px; }
+  @media only screen and (min-width: 768px) {
+    header, section {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; } }
   header .content, section .content {
-    display: table-cell;
-    vertical-align: middle;
     font-family: 'Roboto', sans-serif; }
+    @media only screen and (min-width: 768px) {
+      header .content, section .content {
+        display: table-cell;
+        vertical-align: middle; } }
   header h1, section h1 {
-    position: absolute;
-    top: 50px;
-    left: 0;
     text-align: center;
     width: 100%;
     margin: 0;
@@ -120,6 +122,11 @@ header, section {
     background-position: center center;
     background-repeat: no-repeat;
     color: transparent; }
+    @media only screen and (min-width: 768px) {
+      header h1, section h1 {
+        position: absolute;
+        top: 50px;
+        left: 0; } }
     header h1:after, section h1:after {
       content: '';
       display: block;
@@ -196,12 +203,20 @@ section {
   padding: 0;
   list-style: none;
   font-size: 20px; }
+  @media only screen and (max-width: 769px) {
+    .section-about ul {
+      margin-top: 40px; } }
   .section-about ul li {
     display: block;
-    width: 50%;
-    padding: 0 120px 40px 80px;
-    float: left;
     min-height: 90px; }
+    @media only screen and (min-width: 768px) {
+      .section-about ul li {
+        width: 50%;
+        float: left;
+        padding: 0 120px 40px 80px; } }
+    @media only screen and (max-width: 769px) {
+      .section-about ul li {
+        padding: 15px 20px 40px 80px; } }
     .section-about ul li:nth-child(1) {
       background: url("/pctrs/li_1.png") left top no-repeat; }
     .section-about ul li:nth-child(2) {
@@ -400,21 +415,42 @@ section {
   .calendar .content {
     width: 100%;
     padding: 0 15px; }
+  @media only screen and (max-width: 1201px) {
+    .calendar .Calendar-content {
+      margin-top: 140px; } }
   .calendar .left, .calendar .right {
     position: relative;
     height: 430px; }
     .calendar .left .loader, .calendar .right .loader {
       color: #fff; }
-  .calendar .left {
-    float: left;
-    width: 370px; }
-  .calendar .right {
-    float: right;
-    width: calc(100% - 370px); }
+  @media only screen and (max-width: 1201px) {
+    .calendar .left {
+      float: none;
+      width: 100%;
+      text-align: center; } }
+  @media only screen and (min-width: 1200px) {
+    .calendar .left {
+      float: left;
+      width: 370px; } }
+  @media only screen and (max-width: 1201px) {
+    .calendar .right {
+      float: none;
+      width: 100%;
+      padding-top: 20px; } }
+  @media only screen and (min-width: 1200px) {
+    .calendar .right {
+      float: right;
+      width: calc(100% - 370px); } }
   .calendar .DayPicker, .calendar .DayPicker-Month {
-    width: 370px;
     font-family: 'PT Sans';
     font-size: 22px; }
+    @media only screen and (max-width: 1201px) {
+      .calendar .DayPicker, .calendar .DayPicker-Month {
+        width: 80%;
+        margin: 20px auto; } }
+    @media only screen and (min-width: 1200px) {
+      .calendar .DayPicker, .calendar .DayPicker-Month {
+        width: 370px; } }
   .calendar .DayPicker-Caption {
     text-transform: uppercase;
     font-size: 26px;
@@ -441,8 +477,10 @@ section {
     background-color: #7b7b7b; }
   .calendar .Events {
     width: 100%;
-    font-family: 'PT Sans';
-    padding-left: 45px; }
+    font-family: 'PT Sans'; }
+    @media only screen and (min-width: 1200px) {
+      .calendar .Events {
+        padding-left: 45px; } }
   .calendar .Events-row {
     display: table;
     table-layout: fixed;
@@ -536,21 +574,36 @@ section {
     width: 100%;
     padding: 0 30px; }
   .contacts .left, .contacts .right {
-    float: left;
     font-family: "PT Sans Narrow"; }
+    @media only screen and (max-width: 769px) {
+      .contacts .left, .contacts .right {
+        float: none; } }
+    @media only screen and (min-width: 768px) {
+      .contacts .left, .contacts .right {
+        float: left; } }
   .contacts .left {
-    width: 45%;
     font-size: 24px;
     line-height: 1.2;
     padding-top: 40px; }
+    @media only screen and (max-width: 993px) {
+      .contacts .left {
+        width: 100%; } }
+    @media only screen and (min-width: 992px) {
+      .contacts .left {
+        width: 45%; } }
     .contacts .left .head {
       font-size: 28px;
       font-weight: 700; }
   .contacts .right {
     display: table;
-    width: 55%;
     background: url("/pctrs/contacts_email_bgr.png") left top no-repeat;
     padding: 40px 0 90px 130px; }
+    @media only screen and (max-width: 993px) {
+      .contacts .right {
+        width: 100%; } }
+    @media only screen and (min-width: 992px) {
+      .contacts .right {
+        width: 55%; } }
   .contacts .form-email, .contacts .form-submit {
     display: table-cell;
     vertical-align: middle;
@@ -596,6 +649,9 @@ header {
   justify-content: center;
   align-items: center;
   min-height: 570px; }
+  @media only screen and (max-width: 769px) {
+    .Header-menu {
+      display: none; } }
   .Header-menu a {
     display: block;
     flex: 1 1 auto;
@@ -849,6 +905,9 @@ header {
     position: relative;
     width: 80%;
     margin: 0 auto; }
+    @media only screen and (max-width: 769px) {
+      .photo .content {
+        margin-bottom: 120px; } }
   .photo .seminar-item {
     position: relative;
     overflow: hidden;
@@ -856,7 +915,7 @@ header {
     margin: 0 5px;
     background-position: center top;
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: cover;
     text-align: left;
     font-family: "PT Sans Narrow";
     color: #fff; }
@@ -930,6 +989,9 @@ header {
   .seminars .content {
     width: 80%;
     margin: 0 auto; }
+  @media only screen and (max-width: 769px) {
+    .seminars .Seminars-slider {
+      margin-top: 40px; } }
   .seminars .seminar-item {
     position: relative;
     height: 370px;
@@ -1045,15 +1107,21 @@ header {
 .ReactModal {
   position: absolute;
   top: 40px;
-  left: 50%;
   bottom: 40px;
-  margin-left: -450px;
   background-color: #ffffff;
   width: 90%;
   max-width: 900px;
   padding: 25px;
   outline: none;
-  overflow: auto; }
+  overflow-y: auto;
+  overflow-x: hidden; }
+  @media only screen and (max-width: 993px) {
+    .ReactModal {
+      left: 5%; } }
+  @media only screen and (min-width: 992px) {
+    .ReactModal {
+      left: 50%;
+      margin-left: -450px; } }
 
 .ReactModal-Overlay {
   position: fixed;
@@ -1063,21 +1131,27 @@ header {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6); }
 
+.ReactModal__Body--open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%; }
+
 .ModalContent {
   position: relative;
   color: #000;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
   .ModalContent .slick-track {
     transition: transform 600ms ease; }
 
 .ModalContent-close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -8px;
+  right: -2px;
   border: none;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: bold;
-  transform: scale3d(1.2, 1, 1);
   background: transparent; }
 
 .ModalContent-wrapper {
@@ -1133,9 +1207,13 @@ header {
 
 .ModalContent-info {
   padding: 25px 0; }
-  .ModalContent-info .main-image {
-    float: right;
-    margin: 0 0 15px 15px; }
+  @media only screen and (max-width: 769px) {
+    .ModalContent-info .main-image {
+      display: none; } }
+  @media only screen and (min-width: 768px) {
+    .ModalContent-info .main-image {
+      float: right;
+      margin: 0 0 15px 15px; } }
   .ModalContent-info .item-row {
     margin-bottom: 15px; }
     .ModalContent-info .item-row label {

@@ -11,7 +11,7 @@ class GalleryItem extends Component {
         const article = this.props.gallery;
         const datebegin = moment(article.datebegin);
         const style = {
-            background: `url(${GLOBAL_URL}/uplds/${article.id}/gallery/${article.image})`
+            backgroundImage: `url(${GLOBAL_URL}/uplds/${article.id}/gallery/${article.image})`
         }
 
 

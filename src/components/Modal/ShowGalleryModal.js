@@ -15,14 +15,36 @@ class ShowGalleryModal extends Component {
         eventId: PropTypes.string.isRequired
     }
 
-    componentDidMount() {
-        this.props.loadPhotosIntoModal(this.props.eventId);
-    }
-
     state = {
         currentImage: 0,
         lightboxIsOpen: false,
     }
+
+
+    componentDidMount() {
+        this.props.loadPhotosIntoModal(this.props.eventId);
+        window.addEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    componentDidUpdate() {
+        this.handleWindowSizeChange();
+    }
+
+    handleWindowSizeChange = () => {
+        const container = document.getElementsByClassName('ReactModal__Content')[0];
+        const headerHeight = (this.headerRef !== undefined) ? this.headerRef.offsetHeight : 0;
+        const contentHeight = (this.contentRef !== undefined) ? this.contentRef.offsetHeight : 0;
+        const containerHeight = (container !== undefined) ? container.clientHeight : 0;
+
+        if (headerHeight > 0 && contentHeight > 0 && containerHeight > 0) {
+            this.contentRef.style.height = `${(containerHeight - headerHeight - 20)}px`;
+        }
+    };
+
 
 
     render() {
@@ -56,10 +78,10 @@ class ShowGalleryModal extends Component {
 
             return (
                 <div>
-                    <div className="ModalContent-header">
+                    <div className="ModalContent-header" ref={this.setHeaderRef}>
                         <span className="date">{ moment(event.info.datebegin).format('DD/MM/YY') }</span> { event.info.title }
                     </div>
-                    <div className="ModalContent-content">
+                    <div className="ModalContent-content" ref={this.setContentRef}>
                         <Gallery photos={photosSet} onClick={this.openLightbox} />
                         <Lightbox
                             images={photosSet}
@@ -96,6 +118,13 @@ class ShowGalleryModal extends Component {
         this.setState({
             currentImage: this.state.currentImage + 1,
         });
+    }
+
+    setHeaderRef = header => {
+        this.headerRef = header;
+    }
+    setContentRef = content => {
+        this.contentRef = content;
     }
 
 }

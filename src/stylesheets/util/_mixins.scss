@@ -1,0 +1,62 @@
+/* Breakpoints */
+$xs-width: 480px;
+$sm-width: 768px;
+$md-width: 992px;
+$lg-width: 1200px;
+
+@mixin respond-to($media) {
+  @if $media == xs-screens {
+    @media only screen and (max-width: $sm-width) { @content; }
+  }
+  @else if $media == sm-screens {
+    @media only screen and (min-width: $sm-width + 1) and (max-width: $md-width - 1) { @content; }
+  }
+  @else if $media == md-screens {
+    @media only screen and (min-width: $md-width + 1) and (max-width: $lg-width - 1) { @content; }
+  }
+  @else if $media == lg-screens {
+    @media only screen and (min-width: $lg-width) { @content; }
+  }
+}
+
+@mixin hide-less-than($media) {
+    @media only screen and (max-width: $media) {
+      display: none;
+    }
+    @media only screen and (min-width: $media + 1) {
+      display: block;
+    }
+}
+@mixin hide-more-than($media) {
+  @media only screen and (max-width: $media) {
+    display: block;
+  }
+  @media only screen and (min-width: $media + 1) {
+    display: none;
+  }
+}
+
+@mixin media-less-than($media) {
+  @media only screen and (max-width: $media + 1) {
+    @content;
+  }
+}
+@mixin media-more-than($media) {
+  @media only screen and (min-width: $media) {
+    @content;
+  }
+}
+
+
+@mixin font-adjust($weight: 400, $size: "14px", $family: Roboto) {
+  font: unquote($weight + " " + $size + " " + $family);
+}
+
+@mixin my-transition($obj, $duration, $mode) {
+  -webkit-transition: $obj $duration $mode;
+  -moz-transition: $obj $duration $mode;
+  -ms-transition: $obj $duration $mode;
+  -o-transition: $obj $duration $mode;
+  transition: $obj $duration $mode;
+
+}

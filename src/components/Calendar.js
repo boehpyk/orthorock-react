@@ -64,7 +64,7 @@ class Calendar extends Component {
       return (
         <section className="calendar">
             <h1>Календарь</h1>
-            <div className="content flex-content flex-horizontal flex-row-justify">
+            <div className="content Calendar-content">
                 <div className="left">
                     { this.getDayPicker() }
                 </div>

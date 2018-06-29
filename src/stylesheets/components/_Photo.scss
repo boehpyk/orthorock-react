@@ -20,6 +20,9 @@
     position: relative;
     width: 80%;
     margin: 0 auto;
+    @include media-less-than($sm-width) {
+      margin-bottom: 120px;
+    }
   }
   .seminar-item {
     position: relative;
@@ -28,7 +31,7 @@
     margin: 0 5px;
     background-position: center top;
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: cover;
     text-align: left;
     font-family: "PT Sans Narrow";
     color: #fff;
