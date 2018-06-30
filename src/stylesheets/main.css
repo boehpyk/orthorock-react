@@ -117,8 +117,6 @@ header, section {
     width: 100%;
     margin: 0;
     padding-bottom: 15px;
-    min-width: 500px;
-    min-height: 70px;
     background-position: center center;
     background-repeat: no-repeat;
     color: transparent; }
@@ -126,13 +124,20 @@ header, section {
       header h1, section h1 {
         position: absolute;
         top: 50px;
-        left: 0; } }
+        left: 0;
+        min-width: 500px;
+        min-height: 70px; } }
     header h1:after, section h1:after {
       content: '';
       display: block;
-      width: 208px;
       border-bottom: solid 5px #fff;
       margin: 65px auto 0 auto; }
+      @media only screen and (max-width: 769px) {
+        header h1:after, section h1:after {
+          width: 80%; } }
+      @media only screen and (min-width: 768px) {
+        header h1:after, section h1:after {
+          width: 208px; } }
 
 section {
   max-width: 1500px;
@@ -412,12 +417,18 @@ section {
   .calendar h1 {
     background-image: url("/pctrs/h1_calendar.png");
     top: 2%; }
+    @media only screen and (max-width: 769px) {
+      .calendar h1 {
+        background-size: 90% auto; } }
   .calendar .content {
     width: 100%;
     padding: 0 15px; }
-  @media only screen and (max-width: 1201px) {
+  @media only screen and (max-width: 993px) {
     .calendar .Calendar-content {
       margin-top: 140px; } }
+  @media only screen and (max-width: 769px) {
+    .calendar .Calendar-content {
+      margin-top: 20px; } }
   .calendar .left, .calendar .right {
     position: relative;
     height: 430px; }
@@ -499,17 +510,42 @@ section {
       border-left-color: #7b7b7b; }
   .calendar .Events-date {
     display: table-cell;
-    width: 100px;
     height: 95px;
     background-color: #c00404;
     vertical-align: middle;
-    text-align: center;
-    font-size: 26px; }
+    text-align: center; }
+    @media only screen and (max-width: 768px) {
+      .calendar .Events-date {
+        width: 40px;
+        font-size: 20px; } }
+    @media only screen and (min-width: 769px) and (max-width: 991px) {
+      .calendar .Events-date {
+        width: 70px;
+        font-size: 22px; } }
+    @media only screen and (min-width: 993px) and (max-width: 1199px) {
+      .calendar .Events-date {
+        width: 100px;
+        font-size: 26px; } }
+    @media only screen and (min-width: 1200px) {
+      .calendar .Events-date {
+        width: 100px;
+        font-size: 26px; } }
   .calendar .Events-spacer {
     display: table-cell;
     position: relative;
-    width: 25px;
     height: 95px; }
+    @media only screen and (max-width: 768px) {
+      .calendar .Events-spacer {
+        width: 5px; } }
+    @media only screen and (min-width: 769px) and (max-width: 991px) {
+      .calendar .Events-spacer {
+        width: 15px; } }
+    @media only screen and (min-width: 993px) and (max-width: 1199px) {
+      .calendar .Events-spacer {
+        width: 25px; } }
+    @media only screen and (min-width: 1200px) {
+      .calendar .Events-spacer {
+        width: 25px; } }
     .calendar .Events-spacer:after {
       position: absolute;
       content: '';
@@ -523,6 +559,9 @@ section {
       -o-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out;
       transform: scaleY(0.5); }
+      @media only screen and (max-width: 769px) {
+        .calendar .Events-spacer:after {
+          display: none; } }
   .calendar .Events-info {
     position: absolute;
     display: table-cell;
@@ -531,17 +570,39 @@ section {
     background-color: #dddddd;
     color: #000;
     text-align: left;
-    overflow: hidden;
-    width: calc(100% - 290px); }
+    overflow: hidden; }
+    @media only screen and (max-width: 768px) {
+      .calendar .Events-info {
+        width: calc(100% - 145px); } }
+    @media only screen and (min-width: 769px) and (max-width: 991px) {
+      .calendar .Events-info {
+        width: calc(100% - 270px); } }
+    @media only screen and (min-width: 993px) and (max-width: 1199px) {
+      .calendar .Events-info {
+        width: calc(100% - 290px); } }
+    @media only screen and (min-width: 1200px) {
+      .calendar .Events-info {
+        width: calc(100% - 290px); } }
     .calendar .Events-info a {
       color: #000; }
     .calendar .Events-info .Events-info-title {
       font-family: "PT Sans";
-      font-size: 20px;
       text-transform: uppercase;
       font-weight: 600;
       font-stretch: extra-condensed;
       line-height: 1; }
+      @media only screen and (max-width: 768px) {
+        .calendar .Events-info .Events-info-title {
+          font-size: 18px; } }
+      @media only screen and (min-width: 769px) and (max-width: 991px) {
+        .calendar .Events-info .Events-info-title {
+          font-size: 20px; } }
+      @media only screen and (min-width: 993px) and (max-width: 1199px) {
+        .calendar .Events-info .Events-info-title {
+          font-size: 20px; } }
+      @media only screen and (min-width: 1200px) {
+        .calendar .Events-info .Events-info-title {
+          font-size: 20px; } }
     .calendar .Events-info .Events-info-lid {
       margin-top: 5px;
       line-height: 0.95; }
@@ -554,6 +615,9 @@ section {
     text-align: center;
     vertical-align: middle;
     background-color: #dddddd; }
+    @media only screen and (max-width: 769px) {
+      .calendar .Events-button {
+        width: 100px; } }
     .calendar .Events-button button {
       width: 160px;
       height: 40px;
@@ -562,6 +626,11 @@ section {
       font-size: 22px;
       color: #fff;
       border: none; }
+      @media only screen and (max-width: 769px) {
+        .calendar .Events-button button {
+          width: 92px;
+          height: 34px;
+          font-size: 16px; } }
 
 .contacts {
   background-image: url("/pctrs/contacts_bgr.png");
@@ -604,6 +673,9 @@ section {
     @media only screen and (min-width: 992px) {
       .contacts .right {
         width: 55%; } }
+    @media only screen and (max-width: 769px) {
+      .contacts .right {
+        padding: 40px 0 90px 20px; } }
   .contacts .form-email, .contacts .form-submit {
     display: table-cell;
     vertical-align: middle;
@@ -642,6 +714,9 @@ header {
     margin: 0 auto; }
   header .logo {
     margin: 0 auto; }
+    header .logo img {
+      max-width: 100%;
+      height: auto; }
 
 .Header-menu {
   display: flex;

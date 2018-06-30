@@ -18,14 +18,20 @@
   h1 {
     background-image: url("/pctrs/h1_calendar.png");
     top: 2%;
+    @include media-less-than($sm-width) {
+      background-size: 90% auto;
+    }
   }
   .content {
     width: 100%;
     padding: 0 15px;
   }
   .Calendar-content {
-    @include media-less-than($lg-width) {
+    @include media-less-than($md-width) {
       margin-top: 140px;
+    }
+    @include media-less-than($sm-width) {
+      margin-top: 20px;
     }
   }
   .left, .right {
@@ -144,18 +150,43 @@
 
   .Events-date {
     display: table-cell;
-    width: 100px;
     height: 95px;
     background-color: #c00404;
     vertical-align: middle;
     text-align: center;
-    font-size: 26px;
+    @include respond-to(xs-screens) {
+      width: 40px;
+      font-size: 20px;
+    }
+    @include respond-to(sm-screens) {
+      width: 70px;
+      font-size: 22px;
+    }
+    @include respond-to(md-screens) {
+      width: 100px;
+      font-size: 26px;
+    }
+    @include respond-to(lg-screens) {
+      width: 100px;
+      font-size: 26px;
+    }
   }
   .Events-spacer {
     display: table-cell;
     position: relative;
-    width: 25px;
     height: 95px;
+    @include respond-to(xs-screens) {
+      width: 5px;
+    }
+    @include respond-to(sm-screens) {
+      width: 15px;
+    }
+    @include respond-to(md-screens) {
+      width: 25px;
+    }
+    @include respond-to(lg-screens) {
+      width: 25px;
+    }
     &:after {
       position: absolute;
       content: '';
@@ -165,6 +196,9 @@
       margin-top: -24px;
       @include my-transition(all, .2s, ease-out);
       transform: scaleY(0.5);
+      @include media-less-than($sm-width) {
+        display: none;
+      }
     }
   }
   .Events-info {
@@ -177,17 +211,39 @@
     color: #000;
     text-align: left;
     overflow: hidden;
-    width: calc(100% - 290px);
+    @include respond-to(xs-screens) {
+      width: calc(100% - 145px);
+    }
+    @include respond-to(sm-screens) {
+      width: calc(100% - 270px);
+    }
+    @include respond-to(md-screens) {
+      width: calc(100% - 290px);
+    }
+    @include respond-to(lg-screens) {
+      width: calc(100% - 290px);
+    }
     a {
       color: #000;
     }
     .Events-info-title {
       font-family: "PT Sans";
-      font-size: 20px;
       text-transform: uppercase;
       font-weight: 600;
       font-stretch: extra-condensed;
       line-height: 1;
+      @include respond-to(xs-screens) {
+        font-size: 18px;
+      }
+      @include respond-to(sm-screens) {
+        font-size: 20px;
+      }
+      @include respond-to(md-screens) {
+        font-size: 20px;
+      }
+      @include respond-to(lg-screens) {
+        font-size: 20px;
+      }
     }
     .Events-info-lid {
       margin-top: 5px;
@@ -203,7 +259,10 @@
     width: 190px;
     text-align: center;
     vertical-align: middle;
-    background-color: #dddddd;;
+    background-color: #dddddd;
+    @include media-less-than($sm-width) {
+      width: 100px;
+    }
     button {
       width: 160px;
       height: 40px;
@@ -212,6 +271,11 @@
       font-size: 22px;
       color: #fff;
       border: none;
+      @include media-less-than($sm-width) {
+        width: 92px;
+        height: 34px;
+        font-size: 16px;
+      }
     }
   }
 }

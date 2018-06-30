@@ -35,22 +35,30 @@ header, section {
     width: 100%;
     margin: 0;
     padding-bottom: 15px;
-    min-width: 500px;
-    min-height: 70px;
     background-position: center center;
     background-repeat: no-repeat;
     color: transparent;
+    //@include media-less-than($sm-width) {
+    //  background-size: 90% auto;
+    //}
     @include media-more-than($sm-width) {
       position: absolute;
       top: 50px;
       left: 0;
+      min-width: 500px;
+      min-height: 70px;
     }
     &:after {
       content: '';
       display: block;
-      width: 208px;
       border-bottom: solid 5px #fff;
       margin: 65px auto 0 auto;
+      @include media-less-than($sm-width) {
+        width: 80%;
+      }
+      @include media-more-than($sm-width) {
+        width: 208px;
+      }
     }
   }
 }

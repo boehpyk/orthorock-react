@@ -44,6 +44,9 @@
     display: table;
     background: url('/pctrs/contacts_email_bgr.png') left top no-repeat;
     padding: 40px 0 90px 130px;
+    @include media-less-than($sm-width) {
+      padding: 40px 0 90px 20px;
+    }
   }
   .form-email, .form-submit {
     display: table-cell;
