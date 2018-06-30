@@ -65,7 +65,7 @@
   }
   .DayPicker, .DayPicker-Month {
     @include media-less-than($lg-width) {
-      width: 80%;
+      width: 100%;
       margin: 20px auto;
     }
     @include media-more-than($lg-width) {
@@ -73,6 +73,11 @@
     }
     font-family: 'PT Sans';
     font-size: 22px;
+  }
+  .DayPicker-wrapper {
+    @include media-less-than($sm-width) {
+      padding: 0 10px;
+    }
   }
   .DayPicker-Caption {
     text-transform: uppercase;
@@ -98,6 +103,12 @@
   }
   .DayPicker-Day {
     font-size: 26px;
+    @include media-less-than($sm-width) {
+      font-size: 20px;
+    }
+  }
+  .DayPicker-Day--today {
+    background: none;
   }
   .DayPicker-Day--selected, .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
     border: none;

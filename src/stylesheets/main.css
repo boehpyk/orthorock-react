@@ -457,11 +457,14 @@ section {
     font-size: 22px; }
     @media only screen and (max-width: 1201px) {
       .calendar .DayPicker, .calendar .DayPicker-Month {
-        width: 80%;
+        width: 100%;
         margin: 20px auto; } }
     @media only screen and (min-width: 1200px) {
       .calendar .DayPicker, .calendar .DayPicker-Month {
         width: 370px; } }
+  @media only screen and (max-width: 769px) {
+    .calendar .DayPicker-wrapper {
+      padding: 0 10px; } }
   .calendar .DayPicker-Caption {
     text-transform: uppercase;
     font-size: 26px;
@@ -479,6 +482,11 @@ section {
       color: #8c5555; }
   .calendar .DayPicker-Day {
     font-size: 26px; }
+    @media only screen and (max-width: 769px) {
+      .calendar .DayPicker-Day {
+        font-size: 20px; } }
+  .calendar .DayPicker-Day--today {
+    background: none; }
   .calendar .DayPicker-Day--selected, .calendar .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
     border: none;
     border-radius: 0;
@@ -669,13 +677,12 @@ section {
     padding: 40px 0 90px 130px; }
     @media only screen and (max-width: 993px) {
       .contacts .right {
-        width: 100%; } }
+        width: 100%;
+        padding: 40px 0 90px 0px;
+        background-size: 30% auto; } }
     @media only screen and (min-width: 992px) {
       .contacts .right {
         width: 55%; } }
-    @media only screen and (max-width: 769px) {
-      .contacts .right {
-        padding: 40px 0 90px 20px; } }
   .contacts .form-email, .contacts .form-submit {
     display: table-cell;
     vertical-align: middle;
@@ -692,6 +699,10 @@ section {
       font-family: Roboto;
       font-size: 20px;
       color: #fff; }
+      @media only screen and (max-width: 769px) {
+        .contacts .form-email input {
+          font-size: 18px;
+          padding: 7px; } }
   .contacts .form-submit {
     width: 35%;
     text-align: center; }
@@ -703,6 +714,10 @@ section {
       color: #fff;
       background-color: #be0503;
       outline: none; }
+      @media only screen and (max-width: 769px) {
+        .contacts .form-submit button {
+          padding: 8px 15px;
+          font: 500 18px 'PT Sans Narrow'; } }
       .contacts .form-submit button:disabled {
         background-color: #dadada; }
 
