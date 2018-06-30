@@ -164,6 +164,9 @@
     width: 405px;
     margin: 0 auto 15px auto;
     text-align: left;
+    @include media-less-than($sm-width) {
+      width: 100%;
+    }
   }
   label {
     display: block;
@@ -176,6 +179,11 @@
     background-color: #e9e9e9;
     border: solid 1px #dadada;
     font: 400 18px 'Roboto';
+    @include media-less-than($sm-width) {
+      width: 97%;
+      padding: 15px;
+      font: 400 16px 'Roboto';
+    }
   }
   .check-box {
     overflow: auto;

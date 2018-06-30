@@ -1348,6 +1348,9 @@ header {
     width: 405px;
     margin: 0 auto 15px auto;
     text-align: left; }
+    @media only screen and (max-width: 769px) {
+      .ModalContent-form .form-row {
+        width: 100%; } }
   .ModalContent-form label {
     display: block;
     margin-bottom: 5px; }
@@ -1358,6 +1361,11 @@ header {
     background-color: #e9e9e9;
     border: solid 1px #dadada;
     font: 400 18px 'Roboto'; }
+    @media only screen and (max-width: 769px) {
+      .ModalContent-form input[type=text], .ModalContent-form input[type=email] {
+        width: 97%;
+        padding: 15px;
+        font: 400 16px 'Roboto'; } }
   .ModalContent-form .check-box {
     overflow: auto; }
     .ModalContent-form .check-box input[type=checkbox] {
