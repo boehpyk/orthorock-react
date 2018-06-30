@@ -36,13 +36,15 @@ class ShowEventModal extends Component {
     }
 
     handleWindowSizeChange = () => {
-        const container = document.getElementsByClassName('ReactModal__Content')[0];
-        const headerHeight = (this.headerRef !== undefined) ? this.headerRef.offsetHeight : 0;
-        const contentHeight = (this.contentRef !== undefined) ? this.contentRef.offsetHeight : 0;
-        const containerHeight = (container !== undefined) ? container.clientHeight : 0;
+        if (window.innerWidth > 768) {
+            const container = document.getElementsByClassName('ReactModal__Content')[0];
+            const headerHeight = (this.headerRef !== undefined) ? this.headerRef.offsetHeight : 0;
+            const contentHeight = (this.contentRef !== undefined) ? this.contentRef.offsetHeight : 0;
+            const containerHeight = (container !== undefined) ? container.clientHeight : 0;
 
-        if (headerHeight > 0 && contentHeight > 0 && containerHeight > 0) {
-            this.contentRef.style.height = `${(containerHeight - headerHeight - 20)}px`;
+            if (headerHeight > 0 && contentHeight > 0 && containerHeight > 0) {
+                this.contentRef.style.height = `${(containerHeight - headerHeight - 20)}px`;
+            }
         }
     };
 

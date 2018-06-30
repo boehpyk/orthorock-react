@@ -90,6 +90,22 @@
   }
   .slick-slider {
     height: 275px;
+    .slick-prev, .slick-next {
+      @include media-less-than($sm-width) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .slick-next {
+      @include media-less-than($sm-width) {
+        right: -35px;
+      }
+    }
+    .slick-prev {
+      @include media-less-than($sm-width) {
+        left: -35px;
+      }
+    }
   }
   .find-yourself {
     position: absolute;

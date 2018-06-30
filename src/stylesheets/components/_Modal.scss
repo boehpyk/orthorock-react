@@ -39,6 +39,9 @@
   color: #000;
   height: 100%;
   overflow: hidden;
+  @include media-less-than($sm-width) {
+    overflow: auto;
+  }
   .slick-track {
     transition: transform 600ms ease;
   }
@@ -61,6 +64,9 @@
   //min-height: 400px;
   height: 500px;
   overflow-y: auto;
+  @include media-less-than($sm-width) {
+    height: auto;
+  }
   .loader {
     position: absolute;
     left: 50%;
@@ -82,22 +88,38 @@
   font: 700 30px/1.1 'PT Sans Narrow';
   text-transform: uppercase;
   display: table;
+  @include media-less-than($sm-width) {
+    display: block;
+    font: 700 24px/1.1 'PT Sans Narrow';
+  }
   .left {
     display: table-cell;
     width: 70%;
     vertical-align: middle;
+    @include media-less-than($sm-width) {
+      display: block;
+      width: 100%;
+    }
   }
   .right {
     display: table-cell;
     width: 30%;
     text-align: center;
     vertical-align: middle;
+    @include media-less-than($sm-width) {
+      display: block;
+      width: 100%;
+      padding-top: 15px;
+    }
   }
   .date {
     display: inline-block;
     margin-right: 10px;
     font-size: 48px;
     color: #be0503;
+    @include media-less-than($sm-width) {
+      font-size: 32px;
+    }
   }
   button {
     border: none;

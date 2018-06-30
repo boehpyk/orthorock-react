@@ -83,12 +83,14 @@
 {
     left: -50px;
     background: url('/pctrs/left_arr.png') 0 0 no-repeat;
+    background-size: cover;
 }
 [dir='rtl'] .slick-prev
 {
     right: -50px;
     left: auto;
     background: url('/pctrs/right_arr.png') 0 0 no-repeat;
+    background-size: cover;
 }
 .slick-prev:before
 {
@@ -103,12 +105,14 @@
 {
     right: -50px;
     background: url('/pctrs/right_arr.png') 0 0 no-repeat;
+    background-size: cover;
 }
 [dir='rtl'] .slick-next
 {
     right: auto;
     left: -50px;
     background: url('/pctrs/left_arr.png') 0 0 no-repeat;
+    background-size: cover;
 }
 .slick-next:before
 {

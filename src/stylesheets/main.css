@@ -1040,6 +1040,16 @@ header {
       opacity: 0; }
   .photo .slick-slider {
     height: 275px; }
+    @media only screen and (max-width: 769px) {
+      .photo .slick-slider .slick-prev, .photo .slick-slider .slick-next {
+        width: 30px;
+        height: 30px; } }
+    @media only screen and (max-width: 769px) {
+      .photo .slick-slider .slick-next {
+        right: -35px; } }
+    @media only screen and (max-width: 769px) {
+      .photo .slick-slider .slick-prev {
+        left: -35px; } }
   .photo .find-yourself {
     position: absolute;
     right: -40px;
@@ -1067,6 +1077,16 @@ header {
   @media only screen and (max-width: 769px) {
     .seminars .Seminars-slider {
       margin-top: 40px; } }
+  @media only screen and (max-width: 769px) {
+    .seminars .Seminars-slider .slick-prev, .seminars .Seminars-slider .slick-next {
+      width: 30px;
+      height: 30px; } }
+  @media only screen and (max-width: 769px) {
+    .seminars .Seminars-slider .slick-next {
+      right: -30px; } }
+  @media only screen and (max-width: 769px) {
+    .seminars .Seminars-slider .slick-prev {
+      left: -26px; } }
   .seminars .seminar-item {
     position: relative;
     height: 370px;
@@ -1217,6 +1237,9 @@ header {
   color: #000;
   height: 100%;
   overflow: hidden; }
+  @media only screen and (max-width: 769px) {
+    .ModalContent {
+      overflow: auto; } }
   .ModalContent .slick-track {
     transition: transform 600ms ease; }
 
@@ -1236,6 +1259,9 @@ header {
   position: relative;
   height: 500px;
   overflow-y: auto; }
+  @media only screen and (max-width: 769px) {
+    .ModalContent-content {
+      height: auto; } }
   .ModalContent-content .loader {
     position: absolute;
     left: 50%;
@@ -1256,20 +1282,36 @@ header {
   font: 700 30px/1.1 'PT Sans Narrow';
   text-transform: uppercase;
   display: table; }
+  @media only screen and (max-width: 769px) {
+    .ModalContent-header {
+      display: block;
+      font: 700 24px/1.1 'PT Sans Narrow'; } }
   .ModalContent-header .left {
     display: table-cell;
     width: 70%;
     vertical-align: middle; }
+    @media only screen and (max-width: 769px) {
+      .ModalContent-header .left {
+        display: block;
+        width: 100%; } }
   .ModalContent-header .right {
     display: table-cell;
     width: 30%;
     text-align: center;
     vertical-align: middle; }
+    @media only screen and (max-width: 769px) {
+      .ModalContent-header .right {
+        display: block;
+        width: 100%;
+        padding-top: 15px; } }
   .ModalContent-header .date {
     display: inline-block;
     margin-right: 10px;
     font-size: 48px;
     color: #be0503; }
+    @media only screen and (max-width: 769px) {
+      .ModalContent-header .date {
+        font-size: 32px; } }
   .ModalContent-header button {
     border: none;
     min-width: 160px;

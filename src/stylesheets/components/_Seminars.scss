@@ -24,6 +24,22 @@
     @include media-less-than($sm-width) {
       margin-top: 40px;
     }
+    .slick-prev, .slick-next {
+      @include media-less-than($sm-width) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .slick-next {
+      @include media-less-than($sm-width) {
+        right: -30px;
+      }
+    }
+    .slick-prev {
+      @include media-less-than($sm-width) {
+        left: -26px;
+      }
+    }
   }
   .seminar-item {
     position: relative;
