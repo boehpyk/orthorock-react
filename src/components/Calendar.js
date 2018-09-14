@@ -130,6 +130,8 @@ class Calendar extends Component {
                 return 'В этом месяце семинаров нет';
             }
 
+            const spreaded_events = this.getSpreadedEvents(events);
+
             const events_settings = {
                 dots: false,
                 infinite: false,
@@ -139,11 +141,11 @@ class Calendar extends Component {
                 vertical: true
             };
 
-            const eventElements = events.map((event) => (
-            <div key={event.id}>
+            const eventElements = spreaded_events.map((event) => (
+            <div key={event.id + moment(event.datespread).date()}>
                 <div className={(event.typeId === '1') ? 'Events-row' : 'Events-row Events-Orthos'}>
                     <div className="Events-date">
-                        {moment(event.datebegin).date()}
+                        {moment(event.datespread).date()}
                     </div>
                     <div className="Events-spacer"></div>
                     <div className="Events-info">
@@ -174,11 +176,28 @@ class Calendar extends Component {
 
     getSelectedDays(events)
     {
-        const selectedDays = events.map((event) => {
-          return new Date(event.datebegin);
-        })
-        return selectedDays;
+        return events.reduce((dates, event) => {
+            let now = moment(event.datebegin);
+            while (now.isSameOrBefore(moment(event.dateend))) {
+                dates.push(now.toDate());
+                now.add(1, 'days');
+            }
+            return dates;
+        }, []);
     }
+
+    getSpreadedEvents(events)
+    {
+        return events.reduce((res, event) => {
+            let now = moment(event.datebegin);
+            while (now.isSameOrBefore(moment(event.dateend))) {
+                res.push({...event, datespread: now.toDate()});
+                now.add(1, 'days');
+            }
+            return res;
+        }, []);
+    }
+
 
     handleDayClick = (day, { selected }) => {
         // this.setState({
@@ -195,11 +214,15 @@ class Calendar extends Component {
     {
         let i = 0;
         events.forEach((item) => {
-            let day = moment(item.datebegin).format('DD');
-            if (this.daysIndex[day] === undefined) {
-                this.daysIndex[day] = i;
+            let now = moment(item.datebegin);
+            while (now.isSameOrBefore(moment(item.dateend))) {
+                let day = now.format('DD');
+                if (this.daysIndex[day] === undefined) {
+                    this.daysIndex[day] = i;
+                }
+                i++;
+                now.add(1, 'days');
             }
-            i++;
         });
     }
 
