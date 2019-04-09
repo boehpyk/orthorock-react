@@ -1,4 +1,5 @@
 .contacts {
+  position: relative;
   background-image: url("/pctrs/contacts_bgr.png");
   background-repeat: no-repeat;
   background-position: right 4% bottom 6%;
@@ -75,7 +76,7 @@
     text-align: center;
     button {
       border: none;
-      padding: 10px 25px;
+      padding: 10px 25px 7px 25px;
       font: 500 22px 'PT Sans Narrow';
       text-transform: uppercase;
       color: #fff;
@@ -87,7 +88,18 @@
       }
       &:disabled {
         background-color: #dadada;
+        color: #727272;
       }
     }
   }
+}
+.copyright {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  text-align: right;
+}
+.developed-by {
+  margin-top: 10px;
+  font-size: 12px;
 }

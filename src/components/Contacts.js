@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {GLOBAL_URL} from '../constants/config';
-import {openModal} from '../AC/modals'
-import {SHOW_SUBSCRIBE, SHOW_CONFIRM} from '../constants/modals'
+import {openModal} from '../AC/modals';
+import {SHOW_SUBSCRIBE, SHOW_CONFIRM} from '../constants/modals';
 import {connect} from 'react-redux';
-import { parseQueryString } from '../Util/parseQueryString'
+import { parseQueryString } from '../Util/parseQueryString';
+import moment from 'moment';
 
 class Contacts extends Component {
 
@@ -44,6 +45,12 @@ class Contacts extends Component {
                 </div>
                 <div className="right">
                     { this.showFormFields() }
+                </div>
+            </div>
+            <div className="copyright">
+                &copy; OrthoRockSchool - <span className="red">Школа крутых ортодонтов</span> - {moment().format('YYYY')}
+                <div className="developed-by">
+                    Разработка сайта - <a href="http://a26.ru/" target="_blank"><img src='/pctrs/a26_logo.png' border="0" alt="A26 Studio" /></a> Студия
                 </div>
             </div>
         </section>
@@ -111,14 +118,14 @@ class Contacts extends Component {
     showFormFields = () => {
 
         return  (
-                <form formMethod="POST">
-                    <div className="form-email">
-                        <input type="email" name="email" placeholder="Введите Ваш e-mail" onChange={ this.handleInputChange } />
-                    </div>
-                    <div className="form-submit">
-                        <button onClick={this.handleSubmit} disabled={ !this.state.formIsValid }>Подписаться</button>
-                    </div>
-                </form>
+            <form formMethod="POST">
+                <div className="form-email">
+                    <input type="email" name="email" placeholder="Введите Ваш e-mail" onChange={ this.handleInputChange } />
+                </div>
+                <div className="form-submit">
+                    <button onClick={this.handleSubmit} disabled={ !this.state.formIsValid }>Подписаться</button>
+                </div>
+            </form>
         )
 
     }

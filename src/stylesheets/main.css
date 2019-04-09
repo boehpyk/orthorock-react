@@ -45,6 +45,9 @@
   .visible-sm {
     display: none; } }
 
+.red {
+  color: #be0503; }
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -642,6 +645,7 @@ section {
           font-size: 16px; } }
 
 .contacts {
+  position: relative;
   background-image: url("/pctrs/contacts_bgr.png");
   background-repeat: no-repeat;
   background-position: right 4% bottom 6%;
@@ -709,7 +713,7 @@ section {
     text-align: center; }
     .contacts .form-submit button {
       border: none;
-      padding: 10px 25px;
+      padding: 10px 25px 7px 25px;
       font: 500 22px 'PT Sans Narrow';
       text-transform: uppercase;
       color: #fff;
@@ -720,7 +724,18 @@ section {
           padding: 8px 15px;
           font: 500 18px 'PT Sans Narrow'; } }
       .contacts .form-submit button:disabled {
-        background-color: #dadada; }
+        background-color: #dadada;
+        color: #727272; }
+
+.copyright {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  text-align: right; }
+
+.developed-by {
+  margin-top: 10px;
+  font-size: 12px; }
 
 header {
   text-align: center;
