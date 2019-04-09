@@ -16,6 +16,11 @@
   h1 {
     background-image: url("/pctrs/h1_seminars.png");
   }
+  &.courses {
+    h1 {
+      background-image: url("/pctrs/h1_courses.png");
+    }
+  }
   .content {
     width: 80%;
     margin: 0 auto;

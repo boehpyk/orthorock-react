@@ -18,12 +18,12 @@ export function loadMonthEvents(month) {
     }
 }
 
-export function loadFutureEvents(month) {
+export function loadFutureEvents(typeId) {
     return (dispatch, getState) => {
 
         dispatch({
             type: LOAD_FUTURE_EVENTS,
-            payload: {},
+            payload: {typeId},
             callAPI: `${GLOBAL_URL}/api/events/future/`
         })
     }

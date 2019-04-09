@@ -101,9 +101,7 @@ class ShowEventModal extends Component {
                     <div className="ModalContent-content" ref={this.setContentRef}>
                         <Slider ref={slider => (this.slider = slider)} {...Slidersettings}>
                             <div className="ModalContent-info">
-
                                 <img className="main-image" src={ imageSrc } border="0" alt={ event.title } />
-
                                 <div className="item-row">
                                     <label>Где:</label> { event.city } { event.address }
                                 </div>

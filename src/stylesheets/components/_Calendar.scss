@@ -165,6 +165,7 @@
     background-color: #c00404;
     vertical-align: middle;
     text-align: center;
+    line-height: 1;
     @include respond-to(xs-screens) {
       width: 40px;
       font-size: 20px;

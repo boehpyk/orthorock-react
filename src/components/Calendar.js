@@ -8,6 +8,7 @@ import Slider from 'react-slick'
 import moment from 'moment';
 import {SHOW_EVENT} from '../constants/modals';
 import Loader from './Utils/Loader';
+import ReactHtmlParser from 'react-html-parser';
 
 const WEEKDAYS_SHORT = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
 const MONTHS = [
@@ -130,7 +131,7 @@ class Calendar extends Component {
                 return 'В этом месяце семинаров нет';
             }
 
-            const spreaded_events = this.getSpreadedEvents(events);
+            // const spreaded_events = this.getSpreadedEvents(events);
 
             const events_settings = {
                 dots: false,
@@ -141,28 +142,34 @@ class Calendar extends Component {
                 vertical: true
             };
 
-            const eventElements = spreaded_events.map((event) => (
-            <div key={event.id + moment(event.datespread).date()}>
-                <div className={(event.typeId === '1') ? 'Events-row' : 'Events-row Events-Orthos'}>
-                    <div className="Events-date">
-                        {moment(event.datespread).date()}
-                    </div>
-                    <div className="Events-spacer"></div>
-                    <div className="Events-info">
-                        <div className="Events-info-content">
-                            <div className="Events-info-title">
-                                {event.title}
+            const eventElements = events.map((event) => {
+                const datebegin_formatted = moment(event.datebegin).format('DD.MM');
+                const dateend_formatted = moment(event.dateend).format('DD.MM');
+                const out_date = (datebegin_formatted === dateend_formatted) ? datebegin_formatted : `${datebegin_formatted}<br />-<br />${"\n"}${dateend_formatted}`;
+                return (
+                    <div key={event.id + moment(event.datebegin).date()}>
+                        <div className={(event.typeId === '1') ? 'Events-row' : 'Events-row Events-Orthos'}>
+                            <div className="Events-date">
+                                { ReactHtmlParser(out_date) }
                             </div>
-                            <div className="Events-info-lid">
-                                {event.lid}
+                            <div className="Events-spacer"></div>
+                            <div className="Events-info">
+                                <div className="Events-info-content">
+                                    <div className="Events-info-title">
+                                        {event.title}
+                                    </div>
+                                    <div className="Events-info-lid">
+                                        {event.lid}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="Events-button">
+                                <button onClick={ this.showModal } value={ event.id }>Подробнее</button>
                             </div>
                         </div>
                     </div>
-                    <div className="Events-button">
-                        <button onClick={ this.showModal } value={ event.id }>Подробнее</button>
-                    </div>
-                </div>
-            </div>))
+                );
+            });
 
             return (
                 <div className="calendar-slides">

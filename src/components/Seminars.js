@@ -10,13 +10,14 @@ import Loader from './Utils/Loader';
 class Seminars extends Component {
 
     componentWillMount() {
-        this.props.loadFutureEvents()
+        this.props.loadFutureEvents(this.props.typeId);
     }
 
   render() {
+        const additionalClassName = (this.props.typeId === '1') ? 'seminars courses' : 'seminars';
     return (
-        <section className="seminars">
-            <h1>Семинары</h1>
+        <section className={additionalClassName}>
+            <h1>{ (this.props.typeId === '1') ? 'Офис-курсы' : 'Семинары' }</h1>
             <div className="content">
                 { this.getFutureSeminars() }
             </div>
@@ -35,7 +36,11 @@ class Seminars extends Component {
 
           const seminars = this.props.futureevents;
 
-          const listItems = seminars.map((seminar) => <li key={seminar.id}><Seminar seminar={seminar} /></li>)
+          const listItems = seminars.filter(seminar => seminar.typeId === this.props.typeId).map((seminar) => {
+                  return (
+                      <li key={seminar.id}><Seminar seminar={seminar}/></li>
+                  );
+          });
           const settings = {
               dots: false,
               infinite: true,

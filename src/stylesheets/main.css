@@ -521,7 +521,8 @@ section {
     height: 95px;
     background-color: #c00404;
     vertical-align: middle;
-    text-align: center; }
+    text-align: center;
+    line-height: 1; }
     @media only screen and (max-width: 768px) {
       .calendar .Events-date {
         width: 40px;
@@ -1086,6 +1087,8 @@ header {
     text-align: center; }
   .seminars h1 {
     background-image: url("/pctrs/h1_seminars.png"); }
+  .seminars.courses h1 {
+    background-image: url("/pctrs/h1_courses.png"); }
   .seminars .content {
     width: 80%;
     margin: 0 auto; }
