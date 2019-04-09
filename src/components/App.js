@@ -62,7 +62,7 @@ class App extends Component {
       const isMobile = screenWidth <= 768;
 
       let options = {
-          anchors:              ['Header', 'About', 'Courses', 'Seminars', 'Calendar', 'Photo', 'Contacts'],
+          anchors:              ['Header', 'About', 'Seminars', 'Courses', 'Calendar', 'Photo', 'Contacts'],
           scrollBar:            false,
           navigation:           false,
           verticalAlign:        false,
@@ -78,8 +78,8 @@ class App extends Component {
                   <div>
                       <Header />
                       <About />
-                      <Seminars typeId='1' />
                       <Seminars typeId='2' />
+                      <Seminars typeId='1' />
                       <Calendar />
                       <Photo />
                       <Contacts />
@@ -94,10 +94,10 @@ class App extends Component {
                           <About/>
                       </Section>
                       <Section>
-                          <Seminars typeId='1' />
+                          <Seminars typeId='2' />
                       </Section>
                       <Section>
-                          <Seminars typeId='2' />
+                          <Seminars typeId='1' />
                       </Section>
                       <Section>
                           <Calendar/>
